@@ -4,7 +4,7 @@ class database{
     private $servername = "localhost";
     private $username = "root";
     private $password = "";
-    private $dbname = "sharepost";
+    private $dbname = "shipcruisetour";
 
     public function openConnection(){
         try {

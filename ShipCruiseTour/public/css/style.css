@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pic-login{
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+
+}
+.form-control {
+    border: 1px solid black;
+    border-radius: 0px;
+    height: 40px;
+}
+.form-label{
+    margin-bottom: 10px;
+}
+/*nav bar*/
+#nav{
+    background-color:white;
+}
+
+li a{
+    margin-right:50px ;
+}
+@media only screen and (max-width: 600px) {
+    li a{
+        margin-right:50px ;
+    }
+}
+
+
+
