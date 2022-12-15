@@ -10,14 +10,14 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= URLROOT.'/pages/' ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#">Disabled</a>
+                <a class="nav-link " href="<?= URLROOT.'/pages/login' ?>">Connect</a>
             </li>
         </ul>
         </form>
