@@ -1,4 +1,5 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
+<?php require_once APPROOT.'/views/inc/navbar.php'; ?>
 
 <section class="h-100 gradient-form">
   <div class="container py-5 h-100">

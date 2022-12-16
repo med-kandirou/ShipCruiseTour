@@ -42,11 +42,23 @@ li a{
         margin-right:50px ;
     }
 }
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
 
+.place{
+    text-align: center;
+    font-weight: bold;
+}
+.grey{
+    background-color: aliceblue;
+}
 .landing{
     height: 100vh;
 }
-h1{
+.txt_lan{
     text-align: center;
     color: rgb(0, 0, 0);
     font-weight: bold;
