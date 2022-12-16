@@ -33,7 +33,9 @@
 }
 
 li a{
-    margin-right:50px ;
+    margin-right:50px;
+    color: rgb(219, 0, 0);
+    font-weight: bold;
 }
 @media only screen and (max-width: 600px) {
     li a{
@@ -41,5 +43,26 @@ li a{
     }
 }
 
+.landing{
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 60px;
+}
 
+#reserve{
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0px;
+}
+#pic_about{
+    width: 100%;
+}
 
