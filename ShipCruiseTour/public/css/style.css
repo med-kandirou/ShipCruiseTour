@@ -88,4 +88,10 @@ li a{
     margin-bottom: auto;
 }
 
-/*contact login inscrire*/
+.title_ticket{
+    text-align: center;
+}
+.title_ticket2{
+    color: rgb(147, 145, 145);
+    text-align: center;
+}
