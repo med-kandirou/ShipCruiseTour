@@ -1,7 +1,7 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
 <?php require_once APPROOT.'/views/inc/navbar.php'; ?>
 
-<section class="h-100 gradient-form">
+<section class="h-100 gradient-form" style="margin-bottom: 450px;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
@@ -50,3 +50,6 @@
     </div>
   </div>
 </section>
+
+
+<?php require_once APPROOT.'/views/inc/footer.php'; ?>

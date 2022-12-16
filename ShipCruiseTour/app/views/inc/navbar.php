@@ -17,7 +17,7 @@
                 <a class="nav-link" href="<?= URLROOT.'/pages/about'?>">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Tickets</a>
+                <a class="nav-link" href="<?= URLROOT.'/pages/reservation'?>">Tickets</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= URLROOT.'/pages/contact'?>">Contact</a>

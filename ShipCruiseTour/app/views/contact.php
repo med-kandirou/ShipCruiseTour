@@ -1,7 +1,7 @@
 <?php require_once APPROOT.'/views/inc/header.php';?>
 <?php require_once APPROOT.'/views/inc/navbar.php'; ?>
 
-<section class="h-100 gradient-form">
+<section class="h-100 gradient-form" style="margin-bottom: 400px;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
@@ -26,10 +26,6 @@
                     <label class="form-label" for="form2Example11">Message :</label>
                     <textarea  id="form2Example11" class="form-control" rows="7" placeholder="Message"></textarea>
                   </div>
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example22">Password :</label>
-                    <input type="password" id="form2Example22" class="form-control" placeholder="Your password"/>
-                  </div>
                   <div class="text-center pt-1 mb-5 pb-1">
                     <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn" type="button">Submit</button>
                   </div>
@@ -46,3 +42,5 @@
     </div>
   </div>
 </section>
+
+<?php require_once APPROOT.'/views/inc/footer.php'; ?>

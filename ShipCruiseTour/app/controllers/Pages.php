@@ -9,7 +9,6 @@ class Pages extends Controller{
     public function contact(){
         $this->view('contact');
     }
-
     public function about(){
         $this->view('about');
     }
@@ -18,5 +17,8 @@ class Pages extends Controller{
     }
     public function inscrire(){
         $this->view('inscrire');
+    }
+    public function reservation(){
+        $this->view('reservation');
     }
 }
