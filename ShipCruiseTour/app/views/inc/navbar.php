@@ -14,10 +14,13 @@
                 <a class="nav-link" href="<?= URLROOT.'/pages/' ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="<?= URLROOT.'/pages/about'?>">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Voyage</a>
+                <a class="nav-link" href="#">Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= URLROOT.'/pages/contact'?>">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="<?= URLROOT.'/pages/login' ?>">Connect</a>
