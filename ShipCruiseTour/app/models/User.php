@@ -4,6 +4,12 @@ class User extends database{
     function __construct() { }
 
 
+    function test(){
+       return "done";
+    }
+
+
+
     function resister($nom,$prenom,$email,$mdp){
         $sql = "INSERT INTO `user`(`nom`, `prenom`, `email`, `pass`, `role`) VALUES (:nom,:prenom,:email,:pass,1)";
         $stmt=$this->openConnection()->prepare($sql);

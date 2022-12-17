@@ -7,10 +7,14 @@ class Users extends Controller{
     
     public function register(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
-            extract($_POST);
-            if($this->user->register($nom,$prenom,$email,$pass)==true){
-                echo 'added';
-            }
+            // extract($_POST);
+            // if($this->user->register($nom,$prenom,$email,$pass)==true){
+            //     echo 'added';
+            // }
+
+            $res=$this->user->test();
+            echo $res;
+
         }
     }
 }
