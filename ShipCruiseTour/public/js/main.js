@@ -39,7 +39,23 @@ $(document).ready(function () {
         count+=passconfirm();
         count+=emailregex();
         if(count==0){
-            alert("login");
+            $.post("../Users/register",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),pass:$("#password").val()},
+                function (response) {
+                    // if(response=='added'){
+                    //     // Swal.fire(
+                    //     //     'Succes!',
+                    //     //     'Compte a été crée !',
+                    //     //     'success'
+                    //     // )      
+                    //     // setTimeout(()=>{
+                    //     //     window.location.href="./connect.php";
+                    //     // },2000);   
+                        
+                    //     console.log("ajouter bien");
+                    // }
+                    console.log(response);
+                },
+            );
         }
     });
 
@@ -51,7 +67,7 @@ $(document).ready(function () {
             count+=getempty(fields[i]);
         }
         if(count==0){
-            alert("login");
+           location.replace('../Pages/index');
         }
     });
 })
