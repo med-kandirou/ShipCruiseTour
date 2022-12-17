@@ -79,7 +79,6 @@ li a{
 }
 
 /*about us*/
-
 #title_about{
     color: white;
     margin-left: auto;
@@ -94,4 +93,7 @@ li a{
 .title_ticket2{
     color: rgb(147, 145, 145);
     text-align: center;
+}
+.err{
+    color: red;
 }

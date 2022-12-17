@@ -15,15 +15,17 @@
                 </div>
                 <form>
                   <div class="form-outline mb-4">
-                  <label class="form-label" for="form2Example11">Email :</label>
-                    <input type="email" id="form2Example11" class="form-control" placeholder="Phone number or email address" />
+                  <label class="form-label">Email :</label>
+                    <input type="email" id="email" class="form-control" placeholder="Phone number or email address" />
+                    <p class="err" id="email_err"></p>
                   </div>
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example22">Password :</label>
-                    <input type="password" id="form2Example22" class="form-control" placeholder="Your password"/>
+                    <label class="form-label">Password :</label>
+                    <input type="password" id="password" class="form-control" placeholder="Your password"/>
+                    <p class="err" id="password_err"></p>
                   </div>
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn" type="button">Se connecter</button>
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 btn" id="login" type="button">Se connecter</button>
                   </div>
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">Don't have an account?</p>
