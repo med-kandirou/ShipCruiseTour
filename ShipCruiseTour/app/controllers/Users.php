@@ -8,7 +8,7 @@ class Users extends Controller{
     public function register(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
             extract($_POST);
-            $hashed_pass=password_hash($pass, PASSWORD_DEFAULT);
+            $hashed_pass=password_hash($pass,PASSWORD_DEFAULT);
             if($this->user->register($nom,$prenom,$email,$hashed_pass)==true){
                 echo 'added';
             }
@@ -20,7 +20,6 @@ class Users extends Controller{
             extract($_POST);
             $data=$this->user->login($email,$pass);
             echo $data;
-            
         }
     }
 }

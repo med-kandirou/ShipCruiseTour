@@ -65,24 +65,22 @@ $(document).ready(function () {
         if(count==0){
             $.post("../Users/login",{email:$("#email").val(),pass:$("#password").val()},
             function (response) {
-                // if(response=='true'){
-                //     Swal.fire(
-                //         'Succes!',
-                //         'Bienvenue dans votre espace !',
-                //         'success'
-                //     )      
-                //     setTimeout(()=>{
-                //         location.replace('../Pages/');
-                //     },2000);   
-                // }
-                // else{
-                //     Swal.fire({
-                //         icon: 'error',
-                //         title: 'Oops!Email or password invalid',
-                //     })
-                // }
-
-                console.log(response);
+                if(response==true){
+                    Swal.fire(
+                        'Succes!',
+                        'Bienvenue dans votre espace !',
+                        'success'
+                    )      
+                    setTimeout(()=>{
+                        location.replace('../Pages/');
+                    },2000);   
+                }
+                else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops!Email or password invalid',
+                    })
+                }
             },
         );
         }
