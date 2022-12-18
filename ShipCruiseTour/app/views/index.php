@@ -1,6 +1,6 @@
 <?php require_once APPROOT.'/views/inc/header.php'; ?>
 
-<div class="landing" class="container-fluid" style="background-image: url(<?= URLROOT.'/img/home_pic.jpeg' ?>);">
+<div class="landing" class="container-fluid" style="background-image: url(<?= URLROOT.'/img/home_pic.jpeg' ?>); background-size:cover; ">
     <div class="row">
         <?php require_once APPROOT.'/views/inc/navbar.php'; ?>
     </div>
@@ -9,7 +9,7 @@
             <h1 class="txt_lan">Life is short</h1>
             <h1 class="txt_lan">Don't be a tree</h1>
             <h1 class="txt_lan">Take your tickets and yallah</h1><br>
-            <button type="button" id="reserve" class="btn btn-primary">Reserve Now</button>
+            <button type="button" id="reserve" class="btn btn-warning">Reserve Now</button>
         </div>
     </div>
 </div><br><br><br>
