@@ -38,4 +38,9 @@ class Pages extends Controller{
     public function navire(){  
         $this->view('admin/navire');
     }
+    public function logout(){  
+        session_destroy();
+        header('location:../pages/');
+        exit();
+    }
 }

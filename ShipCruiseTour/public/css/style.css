@@ -98,3 +98,6 @@ li a{
 .err{
     color: red;
 }
+#logout{
+    width: max-content;
+}
