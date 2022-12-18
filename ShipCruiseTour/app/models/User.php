@@ -29,7 +29,7 @@ class User extends database{
                 $_SESSION['prenom']=$res['prenom'];
                 $_SESSION['email']=$res['email'];
                 $_SESSION['role']=$res['role'];
-                return true;
+                return $_SESSION['role'];
             }
             else{
                 return false;

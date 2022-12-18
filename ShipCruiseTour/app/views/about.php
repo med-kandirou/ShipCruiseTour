@@ -17,7 +17,7 @@
                 possimus ipsum quae culpa voluptatem molestiae delectus blanditiis accusantium vel? Quas in saepe dolores dolor. Possimus voluptatum autem ducimus aspernatur.</p>
         </div>
         <div class="col-md-6">
-            <img id="pic_about" src="<?= URLROOT.'/img/home_pic.jpeg' ?>" >
+            <img id="pic_about" src="<?= URLROOT.'/img/home_pic2.jpeg' ?>" >
         </div>
     </div>
 </div>

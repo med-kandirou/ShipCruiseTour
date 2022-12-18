@@ -2,9 +2,9 @@
 
 class Pages extends Controller{
     function __construct() {}
-    
-    public function index(){
-        
+
+    /*guest */
+    public function index(){  
         $this->view('index');
     }
     public function contact(){
@@ -21,5 +21,9 @@ class Pages extends Controller{
     }
     public function reservation(){
         $this->view('reservation');
+    }
+    /* admin */
+    public function admin(){  
+        $this->view('admin/index');
     }
 }
