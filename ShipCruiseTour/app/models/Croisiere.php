@@ -1,8 +1,7 @@
 <?php
 
-class Voyage extends database{
+class Croisiere extends database{
     function __construct() { }
-
 
     function getlatest(){
         

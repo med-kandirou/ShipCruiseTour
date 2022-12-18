@@ -1,7 +1,7 @@
 <?php require_once APPROOT.'/views/admin/header_admin.php'; ?>
 
 <div class="container-fluid">
-    <h1 id="title_about">Statiqtiques</h1>
+    <h1 class="text-center">Statistiques</h1>
 </div>
 
 
