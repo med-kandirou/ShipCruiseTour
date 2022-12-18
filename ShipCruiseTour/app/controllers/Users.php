@@ -14,4 +14,13 @@ class Users extends Controller{
             }
         }
     }
+
+    public function login(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            extract($_POST);
+            $data=$this->user->login($email,$pass);
+            echo $data;
+            
+        }
+    }
 }

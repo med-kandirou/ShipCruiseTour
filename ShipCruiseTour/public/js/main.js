@@ -48,7 +48,7 @@ $(document).ready(function () {
                             'success'
                         )      
                         setTimeout(()=>{
-                            location.replace('../Pages/connect');
+                            location.replace('../Pages/login');
                         },2000);   
                     }
                 },
@@ -63,7 +63,28 @@ $(document).ready(function () {
             count+=getempty(fields[i]);
         }
         if(count==0){
-           location.replace('../Pages/index');
+            $.post("../Users/login",{email:$("#email").val(),pass:$("#password").val()},
+            function (response) {
+                // if(response=='true'){
+                //     Swal.fire(
+                //         'Succes!',
+                //         'Bienvenue dans votre espace !',
+                //         'success'
+                //     )      
+                //     setTimeout(()=>{
+                //         location.replace('../Pages/');
+                //     },2000);   
+                // }
+                // else{
+                //     Swal.fire({
+                //         icon: 'error',
+                //         title: 'Oops!Email or password invalid',
+                //     })
+                // }
+
+                console.log(response);
+            },
+        );
         }
     });
 })
