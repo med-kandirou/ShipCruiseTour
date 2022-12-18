@@ -41,24 +41,20 @@ $(document).ready(function () {
         if(count==0){
             $.post("../Users/register",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),pass:$("#password").val()},
                 function (response) {
-                    // if(response=='added'){
-                    //     // Swal.fire(
-                    //     //     'Succes!',
-                    //     //     'Compte a été crée !',
-                    //     //     'success'
-                    //     // )      
-                    //     // setTimeout(()=>{
-                    //     //     window.location.href="./connect.php";
-                    //     // },2000);   
-                        
-                    //     console.log("ajouter bien");
-                    // }
-                    console.log(response);
+                    if(response=='added'){
+                        Swal.fire(
+                            'Succes!',
+                            'Compte a été crée !',
+                            'success'
+                        )      
+                        setTimeout(()=>{
+                            location.replace('../Pages/connect');
+                        },2000);   
+                    }
                 },
             );
         }
     });
-
     //login
     $("#login").click(function () { 
         var fields=['email','password'];

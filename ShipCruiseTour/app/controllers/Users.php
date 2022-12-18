@@ -7,14 +7,11 @@ class Users extends Controller{
     
     public function register(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
-            // extract($_POST);
-            // if($this->user->register($nom,$prenom,$email,$pass)==true){
-            //     echo 'added';
-            // }
-
-            $res=$this->user->test();
-            echo $res;
-
+            extract($_POST);
+            $hashed_pass=password_hash($pass, PASSWORD_DEFAULT);
+            if($this->user->register($nom,$prenom,$email,$hashed_pass)==true){
+                echo 'added';
+            }
         }
     }
 }
