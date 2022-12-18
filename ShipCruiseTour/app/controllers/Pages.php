@@ -4,6 +4,7 @@ class Pages extends Controller{
     function __construct() {}
     
     public function index(){
+        
         $this->view('index');
     }
     public function contact(){
