@@ -1,7 +1,10 @@
 <?php
 
 class Pages extends Controller{
-    function __construct() {}
+    function __construct() {
+        $this->port=$this->model('Port');
+        $this->navire=$this->model('Navire');
+    }
 
     /*guest  ----------------------------------------*/
     public function index(){  
@@ -44,15 +47,18 @@ class Pages extends Controller{
     }
     public function port(){  
         if(isset($_SESSION['id'])){
-            $this->view('admin/port');
+            $data=$this->port->gatPorts();
+            $this->view('admin/port',$data);
         }
         else{
             header('location:../pages/');
         }
     }
     public function navire(){  
+        
+        $data=$this->navire->gatNavires();
         if(isset($_SESSION['id'])){
-            $this->view('admin/navire');
+            $this->view('admin/navire',$data);
         }
         else{
             header('location:../pages/');
