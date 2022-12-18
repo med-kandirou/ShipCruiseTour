@@ -29,7 +29,7 @@ class User extends database{
         $stmt->execute();
         if($stmt->rowCount()==1){
             $res=$stmt->fetch();
-            if(password_verify($pass, $res['pass'])){
+            if(password_verify($pass,$res['pass'])){
                 $_SESSION['id']=$res['id_u'];
                 $_SESSION['nom']=$res['nom'];
                 $_SESSION['prenom']=$res['prenom'];
