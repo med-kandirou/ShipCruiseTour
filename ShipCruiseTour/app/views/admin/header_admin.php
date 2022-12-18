@@ -39,7 +39,7 @@
             <li>
                 <div class="btn-group" id="logout">
                     <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Admin
+                        <?= $_SESSION['nom']; ?>
                     </button>
                     <div class="dropdown-menu" >
                         <a class="dropdown-item" href="<?= URLROOT.'/pages/logout'?>">Log out</a>

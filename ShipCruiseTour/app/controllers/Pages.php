@@ -27,16 +27,36 @@ class Pages extends Controller{
     /* admin ---------------------------------------- */
 
     public function admin(){  
-        $this->view('admin/index');
+        if(isset($_SESSION['id'])){
+            $this->view('admin/index');
+        }
+        else{
+            header('location:../pages/');
+        }
     }
     public function croisiere(){  
-        $this->view('admin/croisiere');
+        if(isset($_SESSION['id'])){
+            $this->view('admin/croisiere');
+        }
+        else{
+            header('location:../pages/');
+        }
     }
     public function port(){  
-        $this->view('admin/port');
+        if(isset($_SESSION['id'])){
+            $this->view('admin/port');
+        }
+        else{
+            header('location:../pages/');
+        }
     }
     public function navire(){  
-        $this->view('admin/navire');
+        if(isset($_SESSION['id'])){
+            $this->view('admin/navire');
+        }
+        else{
+            header('location:../pages/');
+        }
     }
     public function logout(){  
         session_destroy();
