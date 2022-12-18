@@ -3,7 +3,7 @@
 class Pages extends Controller{
     function __construct() {}
 
-    /*guest */
+    /*guest  ----------------------------------------*/
     public function index(){  
         $this->view('index');
     }
@@ -22,8 +22,20 @@ class Pages extends Controller{
     public function reservation(){
         $this->view('reservation');
     }
-    /* admin */
+
+
+    /* admin ---------------------------------------- */
+
     public function admin(){  
         $this->view('admin/index');
+    }
+    public function croisiere(){  
+        $this->view('admin/croisiere');
+    }
+    public function port(){  
+        $this->view('admin/port');
+    }
+    public function navire(){  
+        $this->view('admin/navire');
     }
 }

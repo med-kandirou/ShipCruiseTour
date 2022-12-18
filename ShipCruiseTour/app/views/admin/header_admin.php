@@ -28,13 +28,13 @@
                 <a class="nav-link" href="<?= URLROOT.'/pages/admin' ?>">Statistique <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= URLROOT.'/pages/about'?>">Croisière</a>
+                <a class="nav-link" href="<?= URLROOT.'/pages/croisiere'?>">Croisière</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= URLROOT.'/pages/reservation'?>">Port</a>
+                <a class="nav-link" href="<?= URLROOT.'/pages/port'?>">Port</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= URLROOT.'/pages/contact'?>">Navire</a>
+                <a class="nav-link" href="<?= URLROOT.'/pages/navire'?>">Navire</a>
             </li>
         </ul>
         </form>
