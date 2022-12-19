@@ -18,10 +18,10 @@ class Ports extends Controller{
 
 
     public function deleteport($id_p){
-        // if($this->port->deleteport($id_p)==true){
-        //     $_SESSION['notif']="Port a éte supprimé avec success";
-        //     header('location:../pages/port');
-        //     exit();
-        // }
+        if($this->port->deleteport($id_p)==true){
+            $_SESSION['notif']="Port a éte supprimé avec success";
+            header('location:'.URLROOT.'/pages/port');
+            exit();
+        }
     }
 }

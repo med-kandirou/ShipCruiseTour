@@ -2,7 +2,7 @@
 notification(); ?>
 
 <div class="container-fluid">
-    <h1 class="text-center mt-5">Navires</h1>
+    <h1 class="text-center mb-5">Navires</h1>
 </div>
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
@@ -19,6 +19,7 @@ notification(); ?>
         <th>Nom</th>
         <th>Nombre de chambre</th>
         <th>Nombre de places</th>
+        <th>Supprimer</th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +29,7 @@ notification(); ?>
                 <td><?= $navire['nom'] ?></td>
                 <td><?= $navire['nbr_ch'] ?></td>
                 <td><?= $navire['nbr_place'] ?></td>
+                <td><a href="<?= '../Navires/deletenavire/'.$navire['id_n'] ?>"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
             </tr> 
         <?php endforeach;?>
     </tbody>

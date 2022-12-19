@@ -26,7 +26,7 @@ notification(); ?>
                 <td><?= $port['id_p'] ?></td>
                 <td><?= $port['nom'] ?></td>
                 <td><?= $port['pays'] ?></td>
-                <td><a href="<?= '../Ports/deleteport/'.$port['id_p'].'' ?>"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
+                <td><a href="<?= '../Ports/deleteport/'.$port['id_p'] ?>"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
             </tr> 
         <?php endforeach;?>
     </tbody>

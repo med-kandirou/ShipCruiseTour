@@ -15,4 +15,11 @@ class Navires extends Controller{
             }
         }
     }
+    public function deletenavire($id_n){
+        if($this->navire->deletenavire($id_n)==true){
+            $_SESSION['notif']="Navire a éte supprimé avec success";
+            header('location:'.URLROOT.'/pages/navire');
+            exit();
+        }
+    }
 }
