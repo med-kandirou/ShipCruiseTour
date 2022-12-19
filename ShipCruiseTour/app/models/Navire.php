@@ -10,6 +10,17 @@ class Navire extends database{
         return $data;
     }
 
+    public function addnavire($nom,$nbr_ch,$nbr_p){
+        $sql = "INSERT INTO `navire`(`nom`, `nbr_ch`, `nbr_place`) VALUES (:nom,:nbr_ch,:nbr_p)";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':nom',$nom);
+        $stmt->bindParam(':nbr_ch',$nbr_ch);
+        $stmt->bindParam(':nbr_p',$nbr_p);
+        if($stmt->execute()){
+            return true;
+        };
+    }
+
 
 
 }
