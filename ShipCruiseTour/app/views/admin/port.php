@@ -1,9 +1,11 @@
-<?php require_once APPROOT.'/views/admin/header_admin.php'; ?>
+<?php require_once APPROOT.'/views/admin/header_admin.php'; 
+notification(); 
+?>
+
 
 <div class="container-fluid">
     <h1 class="text-center mb-5">Ports</h1>
 </div>
-
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
     <h3 class="ml-3">Les informations des Ports</h3>

@@ -9,6 +9,7 @@ class Ports extends Controller{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             extract($_POST);
             if($this->port->addport($nom,$pays)==true){
+                $_SESSION['notif']="Port a éte ajouté avec sussces";
                 header('location:../pages/port');
                 exit();
             }

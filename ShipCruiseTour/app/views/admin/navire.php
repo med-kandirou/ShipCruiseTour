@@ -1,8 +1,5 @@
-<?php require_once APPROOT.'/views/admin/header_admin.php'; ?>
-
-<div class="container-fluid">
-  <?php notification(); ?>
-</div>
+<?php require_once APPROOT.'/views/admin/header_admin.php'; 
+notification(); ?>
 
 <div class="container-fluid">
     <h1 class="text-center mt-5">Navires</h1>
