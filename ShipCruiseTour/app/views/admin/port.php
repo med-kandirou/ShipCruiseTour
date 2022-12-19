@@ -1,7 +1,5 @@
 <?php require_once APPROOT.'/views/admin/header_admin.php'; 
-notification(); 
-?>
-
+notification(); ?>
 
 <div class="container-fluid">
     <h1 class="text-center mb-5">Ports</h1>

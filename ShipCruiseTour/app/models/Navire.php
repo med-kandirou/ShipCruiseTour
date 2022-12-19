@@ -21,6 +21,15 @@ class Navire extends database{
         };
     }
 
+    public function deletenavire($id_navire){
+        $sql = "DELETE FROM `navire` WHERE id_n=:id_navire";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_navire',$id_navire);
+        if($stmt->execute()){
+            return true;
+        };
+    }
+
 
 
 }
