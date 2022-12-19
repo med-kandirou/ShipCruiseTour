@@ -21,10 +21,10 @@ class Port extends database{
         };
     }
 
-    public function deleteport($id_port){
-        $sql = "DELETE FROM `port` WHERE id_p=:id_port";
+    public function deleteport($id_p){
+        $sql = "DELETE FROM `port` WHERE id_p=:id_p";
         $stmt=$this->openConnection()->prepare($sql);
-        $stmt->bindParam(':id_port',$id_port);
+        $stmt->bindParam(':id_p',$id_p);
         if($stmt->execute()){
             return true;
         };
