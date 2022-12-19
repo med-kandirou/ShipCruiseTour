@@ -7,7 +7,7 @@
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
     <h3 class="ml-3">Les informations des Navires</h3>
-    <button type="submit" class="btn btn-primary mr-3">Ajouter une navires</button>
+    <button type="submit" class="btn btn-primary mr-3" id="btn_addnavire">Ajouter une navires</button>
   </div>
 </div>
 
@@ -34,7 +34,7 @@
   </table>
 </div>
 
-<div class="container d-none" id="addnavire">
+<div class="container d-none" id="addnavire_div">
   <form action="">
     <div class="mb-3 mt-3">
       <label for="email" class="form-label">Nom de navire :</label>

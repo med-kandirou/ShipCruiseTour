@@ -7,7 +7,7 @@
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
     <h3 class="ml-3">Les informations des Ports</h3>
-    <button type="submit" class="btn btn-primary mr-3">Ajouter un port</button>
+    <button type="submit" id="btn_addport" class="btn btn-primary mr-3">Ajouter un port</button>
   </div>
 </div>
 
@@ -33,7 +33,7 @@
 </div>
 
 
-<div class="container d-none" id="addport">
+<div class="container d-none" id="addport_div">
   <form action="">
     <div class="mb-3 mt-3">
       <label for="email" class="form-label">Nom de port :</label>
