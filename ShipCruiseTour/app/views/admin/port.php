@@ -38,10 +38,10 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau port</h1>
       </div>
       <div class="modal-body">
-        <form action="">
+        <form action="../Ports/addport" method="POST">
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Nom de port :</label>
-            <input type="text" class="form-control" id="email" placeholder="Nom de port" name="nom" required>
+            <input type="text" class="form-control" placeholder="Nom de port" name="nom" required>
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Pays :</label>
@@ -49,7 +49,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-warning">Ajouter</button>
+            <button type="submit" class="btn btn-warning">Ajouter</button>
           </div>
         </form>
       </div>

@@ -11,4 +11,14 @@ class Port extends database{
         return $data;
     }
 
+    function addport($nom,$pays){
+        $sql = "INSERT INTO `port`(`nom`, `pays`) VALUES (:nom,:pays)";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':nom',$nom);
+        $stmt->bindParam(':pays',$pays);
+        if($stmt->execute()){
+            return true;
+        };
+    }
+
 }
