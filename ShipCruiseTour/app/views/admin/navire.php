@@ -7,7 +7,7 @@
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
     <h3 class="ml-3">Les informations des Navires</h3>
-    <button type="submit" class="btn btn-primary mr-3" id="btn_addnavire">Ajouter une navires</button>
+    <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter navire</button>
   </div>
 </div>
 
@@ -33,6 +33,44 @@
     </tbody>
   </table>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau navire</h1>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Nom de navire :</label>
+            <input type="email" class="form-control" id="email" placeholder="Nom de navire" name="nom">
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Nombre de chambre :</label>
+            <input type="number" class="form-control" placeholder="Nombre de chambre" name="nbrchambre">
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Nombre de places :</label>
+            <input type="number" class="form-control" id="pwd"placeholder="Nombre de places" name="nbrplace">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Ajouter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 
 <div class="container d-none" id="addnavire_div">
   <form action="">

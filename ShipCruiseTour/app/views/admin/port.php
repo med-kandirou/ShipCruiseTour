@@ -7,10 +7,9 @@
 <div class="container mb-4">
   <div class="row d-flex justify-content-between">
     <h3 class="ml-3">Les informations des Ports</h3>
-    <button type="submit" id="btn_addport" class="btn btn-primary mr-3">Ajouter un port</button>
+    <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter port</button>
   </div>
 </div>
-
 <div class="container text-center">   
   <table class="table table-hover">
     <thead>
@@ -32,21 +31,30 @@
   </table>
 </div>
 
-
-<div class="container d-none" id="addport_div">
-  <form action="">
-    <div class="mb-3 mt-3">
-      <label for="email" class="form-label">Nom de port :</label>
-      <input type="email" class="form-control" id="email" placeholder="Nom de navire" name="nom">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau port</h1>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Nom de port :</label>
+            <input type="text" class="form-control" id="email" placeholder="Nom de port" name="nom" required>
+          </div>
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Pays :</label>
+            <input type="text" class="form-control" placeholder="Pays" name="pays" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Ajouter</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="pwd" class="form-label">Pays :</label>
-      <input type="text" class="form-control" placeholder="Pays" name="pays">
-    </div>
-    <div class="mb-3">
-      <button type="submit" class="btn btn-warning">Ajouter</button>
-    </div>
-  </form>
+  </div>
 </div>
 
 
