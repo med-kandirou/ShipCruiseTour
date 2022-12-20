@@ -27,7 +27,7 @@ $(document).ready(function () {
                         <td>${data[i].prix}</td>
                         <td>${data[i].type}</td>
                         <td>${data[i].nom}</td>
-                        <td><a href="../Chambre/deletechambre/.${data[i].id_ch}"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
+                        <td><a href="../Chambres/deletechambre/${data[i].id_ch}"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
                     </tr> ` ;
                 }
                 document.getElementById('chambre_table').innerHTML+=`

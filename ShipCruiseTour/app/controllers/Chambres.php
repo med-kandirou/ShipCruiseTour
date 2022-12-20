@@ -14,6 +14,25 @@ class Chambres extends Controller{
         }
     }
     
+    function deletechambre($id_ch){
+        if($this->chambre->deletechambre($id_ch)==true){
+            $_SESSION['notif']="Chambre a éte supprimé avec success";
+            header('location:'.URLROOT.'/pages/chambre');
+            exit();
+        }
+    }
+    function addchambre(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            extract($_POST);
+            if($this->chambre->addchambre($prix_ch,$type,$id_navire)==true){
+                $_SESSION['notif']="Chambre a éte ajouté avec success";
+                header('location:'.URLROOT.'/pages/chambre');
+                exit();
+            }
+        }
+
+    }
+    
 
     
 }

@@ -19,12 +19,13 @@ notification(); ?>
         </div>
         <div class="col-md-4">
             <button type="button" id="filtre_chambre" class="btn btn-primary">Afficher les chambres</button>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter chambre</button>
         </div>
   </div>
 </div>
 
 
-<!-- <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter navire</button> -->
+
 <div class="container text-center mt-5">           
    <table class="table table-hover" id="chambre_table">
     
@@ -35,21 +36,32 @@ notification(); ?>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau navire</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau chambre</h1>
       </div>
       <div class="modal-body">
-        <form action="../navires/addnavire" method="POST">
-          <div class="mb-3 mt-3">
-            <label for="email" class="form-label">Nom de navire :</label>
-            <input type="text" class="form-control" id="email" placeholder="Nom de navire" name="nom">
+        <form action="../Chambres/addchambre" method="POST">
+          <div class="mb-3">
+            <label for="pwd" class="form-label">Prix de chambre :</label>
+            <input type="number" class="form-control" placeholder="Prix de chambre" name="prix_ch">
           </div>
           <div class="mb-3">
-            <label for="pwd" class="form-label">Nombre de chambre :</label>
-            <input type="number" class="form-control" placeholder="Nombre de chambre" name="nbr_ch">
+            <label class="form-label">Type de chambre :</label>
+            <select class="form-control" name="type">
+                <option >--Select--</option>
+                <option value="1">1 personne</option>
+                <option value="2">1 personnes</option>
+                <option value="3">3 personnes</option>
+                <option value="4">+3 personnes</option>
+            </select>
           </div>
           <div class="mb-3">
-            <label for="pwd" class="form-label">Nombre de places :</label>
-            <input type="number" class="form-control" id="pwd"placeholder="Nombre de places" name="nbr_p">
+            <label class="form-label">Nom de navire :</label>
+            <select class="form-control" name="id_navire">
+                    <option >--Select--</option>
+                <?php foreach($data as $chambre) : ?>
+                    <option value="<?= $chambre['id_n'] ?>"><?= $chambre['nom'] ?></option>
+                <?php endforeach ?>
+        </select>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

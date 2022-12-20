@@ -17,6 +17,25 @@ class Chambre extends database{
         return $data;
     }
 
+    function deletechambre($id_ch){
+        $sql = "DELETE FROM `chambre` WHERE id_ch=:id_ch";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_ch',$id_ch);
+        if($stmt->execute()){
+            return true;
+        }
+    }
+    function addchambre($prix,$type,$id_nav){
+        $sql = "INSERT INTO `chambre`(`prix`, `id_t`, `id_navire`) VALUES (:prix,:type,:id_nav)";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':prix',$prix);
+        $stmt->bindParam(':type',$type);
+        $stmt->bindParam(':id_nav',$id_nav);
+        if($stmt->execute()){
+            return true;
+        };
+    }
+
 
 
 
