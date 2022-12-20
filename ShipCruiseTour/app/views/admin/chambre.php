@@ -26,8 +26,8 @@ notification(); ?>
 
 <!-- <button type="button" class="btn btn-primary mr-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter navire</button> -->
 <div class="container text-center mt-5" id="chambre_table">           
-  <table class="table table-hover">
-    <thead>
+  <!-- <table class="table table-hover">
+    <!-- <thead>
       <tr>
         <th>Numreo</th>
         <th>Type</th>
@@ -37,7 +37,7 @@ notification(); ?>
     </thead>
     <tbody>
     </tbody>
-  </table>
+  </table> --> 
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

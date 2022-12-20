@@ -8,31 +8,29 @@ $(document).ready(function () {
                 function (response) {
                     var data=JSON.parse(response);
                     console.log(data);
-                    $('#chambre_table').val(`
+                    document.getElementById('chambre_table').innerHTML+=`
                         <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>Numreo</th>
                                 <th>Type</th>
                                 <th>Prix</th>
-                                <th>Nom de navire</th>
                             </tr>
                         </thead>
-                    <tbody>`);
-                    for (let i=0;i<data.length; i++) {
-                        $('#chambre_table').val(`
+                    <tbody> `;  
+                    for (let i=0;i<data.length;i++) {
+                        document.getElementById('chambre_table').innerHTML+=`
                         <tr>
-                            <td></td>
-                            <td><?= $navire['nom'] ?></td>
-                            <td><?= $navire['nbr_ch'] ?></td>
-                            <td><?= $navire['nbr_place'] ?></td>
-                            <td><a href="<?= '../Navires/deletenavire/'.$navire['id_n'] ?>"><i class="fa fa-trash" style="font-size:30px;color:red;"></i></a></td>
-                        </tr> `);
-                        
+                            <td>${data[i].id_ch}</td>
+                            <td>${data[i].prix}</td>
+                            <td>${data[i].id_navire}</td>
+                        </tr> ` ;
                     }
+                    document.getElementById('chambre_table').innerHTML+=`
+                        </tbody>
+                    </table>`;
                 },
             );
-
     });
 
 
