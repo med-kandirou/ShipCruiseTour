@@ -21,7 +21,7 @@ class Port extends database{
         };
     }
 
-    public function deleteport($id_p){
+    function deleteport($id_p){
         $sql = "DELETE FROM `port` WHERE id_p=:id_p";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':id_p',$id_p);

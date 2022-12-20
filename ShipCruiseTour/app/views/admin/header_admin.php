@@ -37,6 +37,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?= URLROOT.'/pages/navire'?>">Navire</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= URLROOT.'/pages/chambre'?>">Chambre</a>
+            </li>
             <li>
                 <div class="btn-group" id="logout">
                     <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

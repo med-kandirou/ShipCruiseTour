@@ -4,6 +4,7 @@ class Pages extends Controller{
     function __construct() {
         $this->port=$this->model('Port');
         $this->navire=$this->model('Navire');
+        $this->chambre=$this->model('Chambre');
     }
 
     /*guest  ----------------------------------------*/
@@ -59,6 +60,16 @@ class Pages extends Controller{
         $data=$this->navire->gatNavires();
         if(isset($_SESSION['id'])){
             $this->view('admin/navire',$data);
+        }
+        else{
+            header('location:../pages/');
+        }
+    }
+
+    public function chambre(){  
+        if(isset($_SESSION['id'])){
+            $data=$this->chambre->getchambre();
+            $this->view('admin/chambre',$data);
         }
         else{
             header('location:../pages/');
