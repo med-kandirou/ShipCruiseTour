@@ -42,13 +42,12 @@ notification(); ?>
         <form action="../Chambres/addchambre" method="POST">
           <div class="mb-3">
             <label for="pwd" class="form-label">Prix de chambre :</label>
-            <input type="number" min="1" class="form-control" placeholder="Prix de chambre" name="prix_ch">
+            <input type="number" min="1" required class="form-control" placeholder="Prix de chambre" name="prix_ch">
           </div>
           <div class="mb-3">
             <label class="form-label">Type de chambre :</label>
-            <select class="form-control" name="type">
+            <select class="form-control" required name="type">
                 <option >--Select--</option>
-                <option value="1">1 personne</option>
                 <option value="2">1 personnes</option>
                 <option value="3">3 personnes</option>
                 <option value="4">+3 personnes</option>
@@ -56,7 +55,7 @@ notification(); ?>
           </div>
           <div class="mb-3">
             <label class="form-label">Nom de navire :</label>
-            <select class="form-control" name="id_navire">
+            <select class="form-control" name="id_navire" required>
                     <option >--Select--</option>
                 <?php foreach($data as $chambre) : ?>
                     <option value="<?= $chambre['id_n'] ?>"><?= $chambre['nom'] ?></option>

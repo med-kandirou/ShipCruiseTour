@@ -46,15 +46,15 @@ notification(); ?>
         <form action="../navires/addnavire" method="POST">
           <div class="mb-3 mt-3">
             <label for="email" class="form-label">Nom de navire :</label>
-            <input type="text" class="form-control" id="email" placeholder="Nom de navire" name="nom">
+            <input type="text" class="form-control" id="email" placeholder="Nom de navire" name="nom" required>
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Nombre de chambre :</label>
-            <input type="number"min="1"  class="form-control" placeholder="Nombre de chambre" name="nbr_ch">
+            <input type="number"min="1"  class="form-control" placeholder="Nombre de chambre" name="nbr_ch" required>
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Nombre de places :</label>
-            <input type="number" min="1" class="form-control" id="pwd"placeholder="Nombre de places" name="nbr_p">
+            <input type="number" min="1" class="form-control" id="pwd"placeholder="Nombre de places" name="nbr_p" required>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
