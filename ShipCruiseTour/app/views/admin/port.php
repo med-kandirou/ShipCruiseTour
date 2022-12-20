@@ -42,11 +42,11 @@ notification(); ?>
       <div class="modal-body">
         <form action="../Ports/addport" method="POST">
           <div class="mb-3 mt-3">
-            <label for="email" class="form-label">Nom de port :</label>
+            <label class="form-label">Nom de port :</label>
             <input type="text" class="form-control" placeholder="Nom de port" name="nom" required>
           </div>
           <div class="mb-3">
-            <label for="pwd" class="form-label">Pays :</label>
+            <label  class="form-label">Pays :</label>
             <input type="text" class="form-control" placeholder="Pays" name="pays" required>
           </div>
           <div class="modal-footer">

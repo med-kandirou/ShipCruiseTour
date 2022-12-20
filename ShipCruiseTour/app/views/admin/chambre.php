@@ -42,7 +42,7 @@ notification(); ?>
         <form action="../Chambres/addchambre" method="POST">
           <div class="mb-3">
             <label for="pwd" class="form-label">Prix de chambre :</label>
-            <input type="number" class="form-control" placeholder="Prix de chambre" name="prix_ch">
+            <input type="number" min="1" class="form-control" placeholder="Prix de chambre" name="prix_ch">
           </div>
           <div class="mb-3">
             <label class="form-label">Type de chambre :</label>

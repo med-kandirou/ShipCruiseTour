@@ -50,11 +50,11 @@ notification(); ?>
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Nombre de chambre :</label>
-            <input type="number" class="form-control" placeholder="Nombre de chambre" name="nbr_ch">
+            <input type="number"min="1"  class="form-control" placeholder="Nombre de chambre" name="nbr_ch">
           </div>
           <div class="mb-3">
             <label for="pwd" class="form-label">Nombre de places :</label>
-            <input type="number" class="form-control" id="pwd"placeholder="Nombre de places" name="nbr_p">
+            <input type="number" min="1" class="form-control" id="pwd"placeholder="Nombre de places" name="nbr_p">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
