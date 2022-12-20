@@ -11,7 +11,7 @@ class Chambre extends database{
     }
 
     function filtreChambre($id_n){
-        $sql = "SELECT `id_ch`, `prix`, `id_t`, `id_navire` FROM `chambre` WHERE id_navire=".$id_n."";
+        $sql = "select ch.id_ch ,ch.prix,t.type ,n.nom from chambre ch inner join type_chambre t ON ch.id_t=t.id_t inner join navire n on n.id_n=ch.id_navire and n.id_n=".$id_n."";
         $stmt=$this->openConnection()->query($sql);
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
