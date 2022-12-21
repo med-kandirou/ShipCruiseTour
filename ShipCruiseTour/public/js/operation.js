@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //filtre chambre par navire
-    $('#filtre_chambre').click(function () { 
+    $('#navire_id').change(function () { 
         $('#chambre_table').html();
         var id_nav=$('#navire_id').val();
         if(id_nav!=''){
@@ -35,7 +35,6 @@ $(document).ready(function () {
             },
         );
         }
-
     });
 
 

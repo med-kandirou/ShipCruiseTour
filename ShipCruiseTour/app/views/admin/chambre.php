@@ -18,7 +18,7 @@ notification(); ?>
         </select>
         </div>
         <div class="col-md-4">
-            <button type="button" id="filtre_chambre" class="btn btn-primary">Afficher les chambres</button>
+            <!-- <button type="button" id="filtre_chambre" class="btn btn-primary">Afficher les chambres</button> -->
             <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter chambre</button>
         </div>
   </div>

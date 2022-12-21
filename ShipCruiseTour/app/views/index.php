@@ -9,7 +9,7 @@
             <h1 class="txt_lan">Life is short</h1>
             <h1 class="txt_lan">Don't be a tree</h1>
             <h1 class="txt_lan">Take your tickets and yallah</h1><br>
-            <button type="button" id="reserve" class="btn btn-warning">Book Now</button>
+            <button type="button" id="reserve" class="btn btn-outline-warning">Book Now</button>
         </div>
     </div>
 </div><br><br><br>
