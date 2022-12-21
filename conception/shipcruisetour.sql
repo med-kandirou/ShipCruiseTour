@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 19 déc. 2022 à 21:13
+-- Généré le : mer. 21 déc. 2022 à 12:23
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 7.4.30
 
@@ -30,8 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `chambre` (
   `id_ch` int(11) NOT NULL,
   `prix` int(11) NOT NULL,
-  `id_t` int(11) DEFAULT NULL
+  `id_t` int(11) DEFAULT NULL,
+  `id_navire` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `chambre`
+--
+
+INSERT INTO `chambre` (`id_ch`, `prix`, `id_t`, `id_navire`) VALUES
+(1, 500, 3, 7),
+(2, 300, 2, 1),
+(5, 200, 2, 7),
+(6, 100, 3, 1),
+(7, 888, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -67,7 +79,8 @@ CREATE TABLE `navire` (
 --
 
 INSERT INTO `navire` (`id_n`, `nom`, `nbr_ch`, `nbr_place`) VALUES
-(1, 'navire 1', 50, 1000);
+(1, 'navire 1', 50, 1000),
+(7, 'navire 4', 333, 6543);
 
 -- --------------------------------------------------------
 
@@ -86,7 +99,7 @@ CREATE TABLE `port` (
 --
 
 INSERT INTO `port` (`id_p`, `nom`, `pays`) VALUES
-(1, 'Madrid', 'Spain');
+(28, 'hatim', 'maroc');
 
 -- --------------------------------------------------------
 
@@ -106,6 +119,18 @@ CREATE TABLE `reservation` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `trajet`
+--
+
+CREATE TABLE `trajet` (
+  `id_croisiere` int(11) NOT NULL,
+  `id_port` int(11) NOT NULL,
+  `date_passage` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `type_chambre`
 --
 
@@ -113,6 +138,16 @@ CREATE TABLE `type_chambre` (
   `id_t` int(11) NOT NULL,
   `type` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `type_chambre`
+--
+
+INSERT INTO `type_chambre` (`id_t`, `type`) VALUES
+(1, '1 personne'),
+(2, '2 personne'),
+(3, '3 personne'),
+(4, '+3 personne');
 
 -- --------------------------------------------------------
 
@@ -146,7 +181,8 @@ INSERT INTO `user` (`id_u`, `nom`, `prenom`, `email`, `pass`, `role`) VALUES
 --
 ALTER TABLE `chambre`
   ADD PRIMARY KEY (`id_ch`),
-  ADD KEY `chambre_ibfk_1` (`id_t`);
+  ADD KEY `chambre_ibfk_1` (`id_t`),
+  ADD KEY `fk_navire` (`id_navire`);
 
 --
 -- Index pour la table `croisiere`
@@ -178,6 +214,13 @@ ALTER TABLE `reservation`
   ADD KEY `id_chambre` (`id_chambre`);
 
 --
+-- Index pour la table `trajet`
+--
+ALTER TABLE `trajet`
+  ADD PRIMARY KEY (`id_croisiere`,`id_port`),
+  ADD KEY `fk_port` (`id_port`);
+
+--
 -- Index pour la table `type_chambre`
 --
 ALTER TABLE `type_chambre`
@@ -197,7 +240,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  MODIFY `id_ch` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `croisiere`
@@ -209,13 +252,13 @@ ALTER TABLE `croisiere`
 -- AUTO_INCREMENT pour la table `navire`
 --
 ALTER TABLE `navire`
-  MODIFY `id_n` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_n` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `port`
 --
 ALTER TABLE `port`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `reservation`
@@ -227,7 +270,7 @@ ALTER TABLE `reservation`
 -- AUTO_INCREMENT pour la table `type_chambre`
 --
 ALTER TABLE `type_chambre`
-  MODIFY `id_t` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_t` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `user`
@@ -243,7 +286,8 @@ ALTER TABLE `user`
 -- Contraintes pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  ADD CONSTRAINT `chambre_ibfk_1` FOREIGN KEY (`id_t`) REFERENCES `type_chambre` (`id_t`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `chambre_ibfk_1` FOREIGN KEY (`id_t`) REFERENCES `type_chambre` (`id_t`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_navire` FOREIGN KEY (`id_navire`) REFERENCES `navire` (`id_n`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `croisiere`
@@ -259,6 +303,13 @@ ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `user` (`id_u`),
   ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`id_croisiere`) REFERENCES `croisiere` (`id_croisiere`),
   ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`id_chambre`) REFERENCES `chambre` (`id_ch`);
+
+--
+-- Contraintes pour la table `trajet`
+--
+ALTER TABLE `trajet`
+  ADD CONSTRAINT `fk_croisiere` FOREIGN KEY (`id_croisiere`) REFERENCES `croisiere` (`id_croisiere`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_port` FOREIGN KEY (`id_port`) REFERENCES `port` (`id_p`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
