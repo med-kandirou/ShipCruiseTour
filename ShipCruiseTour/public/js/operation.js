@@ -12,7 +12,7 @@ $(document).ready(function () {
                 document.getElementById('chambre_table').innerHTML+=`
                     <thead>
                         <tr>
-                            <th>Numreo</th>
+                            <th>Numero</th>
                             <th>Prix</th>
                             <th>Type</th>
                             <th>Nom navire</th>
