@@ -40,7 +40,11 @@ class Pages extends Controller{
     }
     public function croisiere(){  
         if(isset($_SESSION['id'])){
-            $this->view('admin/croisiere');
+            //get ports
+            $data1=$this->port->getPorts();
+            //get navires
+            $data2=$this->navire->gatNavires();
+            $this->view('admin/croisiere',$data1,$data2);
         }
         else{
             header('location:../pages/');
@@ -48,7 +52,7 @@ class Pages extends Controller{
     }
     public function port(){  
         if(isset($_SESSION['id'])){
-            $data=$this->port->gatPorts();
+            $data=$this->port->getPorts();
             $this->view('admin/port',$data);
         }
         else{
@@ -56,9 +60,8 @@ class Pages extends Controller{
         }
     }
     public function navire(){  
-        
-        $data=$this->navire->gatNavires();
         if(isset($_SESSION['id'])){
+            $data=$this->navire->gatNavires();
             $this->view('admin/navire',$data);
         }
         else{

@@ -4,7 +4,7 @@ class Port extends database{
     function __construct() { }
 
 
-    function gatPorts(){
+    function getPorts(){
         $sql = "SELECT `id_p`, `nom`, `pays` FROM `port`";
         $stmt=$this->openConnection()->query($sql);
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
