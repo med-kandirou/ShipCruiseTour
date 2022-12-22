@@ -8,7 +8,7 @@ class Croisiere extends database{
     }
 
     function getcroisiere(){
-        $sql = "SELECT `id_croisiere`, `id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart` FROM `croisiere`";
+        $sql = "SELECT `id_croisiere`, `nom`, `id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart` FROM `croisiere`";
         $stmt=$this->openConnection()->query($sql);
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
