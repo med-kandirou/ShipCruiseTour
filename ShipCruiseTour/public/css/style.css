@@ -107,8 +107,7 @@ li a{
 .croisiere{
     border: 1px solid rgb(249, 248, 248);
     background-color: rgb(249, 248, 248);
-    border-radius: 20px;
-    padding: 20px 0px;
+    border-radius: 7px;
     box-shadow: 1px 2px 30px -5px rgba(0,0,0,0.23);
 -webkit-box-shadow: 1px 2px 30px -5px rgba(0,0,0,0.23);
 -moz-box-shadow: 1px 2px 30px -5px rgba(0,0,0,0.23);
@@ -116,3 +115,30 @@ li a{
     border-right-width:20px ;
 }
 
+.prix{
+    font-weight: bold;
+    font-size: 40px;
+}
+.mad{
+    font-size: 20px;
+}
+#prix_div:hover{
+    background-color: gold;
+    color: white ;
+}
+
+.depart_dep{
+    color: rgb(61, 52, 52);
+    font-weight: bold;
+}
+.nuit{
+    font-size: larger;
+    width: fit-content;
+    border: 1px solid #3d89db;
+    border-radius: 20px;
+    padding:7px 15px;
+    color: #3d89db;
+}
+.title_vg{
+    color: #3d89db;
+}

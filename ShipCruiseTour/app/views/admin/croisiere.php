@@ -8,23 +8,23 @@
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Croisière</button>
 
 <div class="container mt-5 mb-5">
-  <div class="row croisiere">
+  <div class="row croisiere mb-5">
     <div class="col-md-4">
       <img src="<?= URLROOT.'/img/exemple2.jpg' ?>" width="100%" height="100%"">
     </div>
-    <div class="col-md-5">
-      <h3>6 Nuits</h3>
-      <h4>Titre voyage</h4>
-      <p>Nom navire</p>
-      <p>port depart</p>
-      <p>visited navire</p>
+    <div class="col-md-5 p-3">
+      <p class="nuit">6 Nuits</p>
+      <h4 class="title_vg">Titre voyage</h4>
+      <p><img width="30px" height="30px" src="<?= URLROOT.'/img/cruise.png';?>" alt="cruise"> Nom navire</p>
+      <p><span class="depart_dep">Port de départ :</span>port depart</p>
+      <p><span class="depart_dep">L'escale à :</span>  visited navire</p>
     </div>
-    <div class="col-md-3 text-center">
-      <h1>100 MAD</h1>
-      <p>pour une personne</p>
-      <button type="button" class="btn btn-outline-primary" >Ajouter Croisière</button>
+    <div class="col-md-3 text-center p-3" id="prix_div">
+      <p class="prix">100<span class="mad">MAD</span></p>
+      <p class="mad">pour une personne</p>
+      <button type="button" class="btn btn-outline-primary mb-3" >Ajouter Croisière</button>
+      <p class="depart_dep">2001/21/43<p>
     </div>
-
   </div>
 </div>
 
