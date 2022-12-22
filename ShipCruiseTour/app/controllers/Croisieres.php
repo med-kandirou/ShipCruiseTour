@@ -4,7 +4,7 @@ class Croisieres extends Controller{
     function __construct() {
         $this->croisiere=$this->model('Croisiere');
     }
-    
+
     function addcroisiere(){
         if($_SERVER['REQUEST_METHOD']=='POST'){
             extract($_POST);

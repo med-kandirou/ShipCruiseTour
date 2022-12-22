@@ -5,6 +5,7 @@ class Pages extends Controller{
         $this->port=$this->model('Port');
         $this->navire=$this->model('Navire');
         $this->chambre=$this->model('Chambre');
+        $this->croisiere=$this->model('Croisiere');
     }
 
     /*guest  ----------------------------------------*/
@@ -44,7 +45,9 @@ class Pages extends Controller{
             $data1=$this->port->getPorts();
             //get navires
             $data2=$this->navire->gatNavires();
-            $this->view('admin/croisiere',$data1,$data2);
+            //get croisieres
+            $data3=$this->croisiere->getcroisiere();
+            $this->view('admin/croisiere',$data1,$data2,$data3);
         }
         else{
             header('location:../pages/');

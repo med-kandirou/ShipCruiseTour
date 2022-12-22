@@ -102,4 +102,10 @@ li a{
     width: max-content;
 }
 
+/*croisiere*/
+
+.croisiere{
+    border: 1px solid red;
+    background-color: rgb(245, 245, 245);
+}
 

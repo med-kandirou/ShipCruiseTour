@@ -7,6 +7,28 @@
 
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Croisière</button>
 
+
+<div class="container">
+  <div class="row croisiere">
+    <div class="col-md-4">
+      <img src="<?= URLROOT.'/img/exemple2.jpg' ?>" width="100%"">
+    </div>
+    <div class="col-md-5">
+      <h3>6 Nuits</h3>
+      <h4>Titre voyage</h4>
+      <p>Nom navire</p>
+      <p>port depart</p>
+      <p>visited navire</p>
+    </div>
+    <div class="col-md-3">
+      <h1>100 MAD</h1>
+      <p>pour une personne</p>
+      <button type="button" class="btn btn-outline-primary" >Ajouter Croisière</button>
+    </div>
+
+  </div>
+</div>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
