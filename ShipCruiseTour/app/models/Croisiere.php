@@ -15,7 +15,7 @@ class Croisiere extends database{
     }
 
     function addcroisiere($nom,$id_navire,$prix,$image,$nbr_nuit,$port_depart,$date_depart){
-        $sql = "INSERT INTO `croisiere`(`nom`,`id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES (:nom,:id_navire,:prix,:image,:nbr_nuit:port_depart,:date_depart)";
+        $sql = "INSERT INTO `croisiere`(`nom`,`id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES (:nom,:id_navire,:prix,:image,:nbr_nuit,:port_depart,:date_depart)";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':nom',$nom);
         $stmt->bindParam(':id_navire',$id_navire);
