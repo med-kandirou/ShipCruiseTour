@@ -7,11 +7,10 @@
 
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Croisière</button>
 
-
-<div class="container">
+<div class="container mt-5 mb-5">
   <div class="row croisiere">
     <div class="col-md-4">
-      <img src="<?= URLROOT.'/img/exemple2.jpg' ?>" width="100%"">
+      <img src="<?= URLROOT.'/img/exemple2.jpg' ?>" width="100%" height="100%"">
     </div>
     <div class="col-md-5">
       <h3>6 Nuits</h3>
@@ -20,7 +19,7 @@
       <p>port depart</p>
       <p>visited navire</p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 text-center">
       <h1>100 MAD</h1>
       <p>pour une personne</p>
       <button type="button" class="btn btn-outline-primary" >Ajouter Croisière</button>
@@ -37,6 +36,10 @@
       </div>
       <div class="modal-body">
         <form action="../Croisieres/addcroisiere" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Nom de croisière :</label>
+            <input type="text" class="form-control" placeholder="Nom de croisière" name="nom" required>
+          </div>
           <div class="mb-3">
             <label class="form-label">Image :</label>
             <input type="file" class="form-control" name="image" required>
