@@ -25,8 +25,8 @@ class Pages extends Controller{
         $this->view('inscrire');
     }
     public function reservation(){
-        $data3=$this->croisiere->getcroisiere();
-        $this->view('reservation',$data3);
+        $data=$this->croisiere->getcroisiere();
+        $this->view('reservation',$data);
     }
 
 
