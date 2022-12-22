@@ -22,7 +22,7 @@
     <div class="col-md-3 text-center p-3" id="prix_div">
       <p class="prix">100<span class="mad">MAD</span></p>
       <p class="mad">pour une personne</p>
-      <button type="button" class="btn btn-outline-primary mb-3" >Ajouter Croisière</button>
+      <button type="button" class="btn btn-outline-primary mb-3">Ajouter Croisière</button>
       <p class="depart_dep">2001/21/43<p>
     </div>
   </div>
@@ -35,7 +35,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Nouvelle Croisière</h1>
       </div>
       <div class="modal-body">
-        <form action="../Croisieres/addcroisiere" method="POST">
+        <form action="../Croisieres/addcroisiere" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label">Nom de croisière :</label>
             <input type="text" class="form-control" placeholder="Nom de croisière" name="nom" required>
