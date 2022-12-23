@@ -15,7 +15,7 @@ class Croisieres extends Controller{
                 exit();
             };
         }
-       
+        //$trajet=$_POST['check_navire'];
     }
 
 

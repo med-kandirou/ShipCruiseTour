@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     function getempty(field){
         if($('#'+field+'').val()==''){
             document.getElementById(''+field+'_err').innerText=""+field+" est obligatoire";

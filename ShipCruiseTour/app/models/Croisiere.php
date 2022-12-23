@@ -29,6 +29,16 @@ class Croisiere extends database{
         };
     }
 
+    function addtrajet($id_croi,$id_port){
+        $sql = "INSERT INTO `trajet`(`id_croisiere`, `id_port`) VALUES (:id_croi,:id_port)";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_croi',$id_croi);
+        $stmt->bindParam(':id_port',$id_port);
+        if($stmt->execute()){
+            return true;
+        };
+    }
+
 
 
 }

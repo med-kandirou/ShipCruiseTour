@@ -111,11 +111,24 @@
                 <?php endforeach ?>
             </select>
           </div>
+          <div class="mb-3">
+            <label class="form-label">Escale a:</label><br>
+            <div class="container">
+              <div class="row">
+              <?php foreach($data as $port) : ?>
+                  <div class="col-md-6">
+                    <input type="checkbox" name="check_navire[]" value="<?= $port['id_p'] ?>" id="<?= $port['id_p'] ?>" class="check">&nbsp;<label for="check"><?= $port['nom'].' - '.$port['pays'] ?></label>
+                  </div>
+                <?php endforeach ?>
+              </div>
+            </div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-warning">Ajouter</button>
           </div>
         </form>
+
       </div>
     </div>
   </div>
