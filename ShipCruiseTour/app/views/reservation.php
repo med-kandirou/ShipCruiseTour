@@ -62,7 +62,7 @@
     <div class="col-md-3 text-center p-3" id="prix_div">
       <p class="prix"><?= $croisiere['prix']?><span class="mad">MAD</span></p>
       <p class="mad">pour une personne</p>
-      <button type="button" class="btn btn-outline-primary mb-3">Détails</button>
+      <button type="button" class="btn btn-outline-primary mb-3">Réserver</button>
       <p class="depart_dep"><?= $croisiere['date_depart']?><p>
     </div>
   </div>

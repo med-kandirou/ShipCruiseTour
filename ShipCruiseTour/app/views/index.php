@@ -86,9 +86,5 @@
             <img width="100%" src="<?= URLROOT.'/img/part3.png'?>">
         </div>
     </div>
-    
 </div>
-
-
-
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>

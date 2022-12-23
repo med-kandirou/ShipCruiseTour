@@ -47,7 +47,7 @@ notification(); ?>
           <div class="mb-3">
             <label class="form-label">Type de chambre :</label>
             <select class="form-control" required name="type">
-                <option >--Select--</option>
+                <option value="">--Select--</option>
                 <option value="2">1 personnes</option>
                 <option value="3">3 personnes</option>
                 <option value="4">+3 personnes</option>
@@ -56,7 +56,7 @@ notification(); ?>
           <div class="mb-3">
             <label class="form-label">Nom de navire :</label>
             <select class="form-control" name="id_navire" required>
-                    <option >--Select--</option>
+                    <option value="">--Select--</option>
                 <?php foreach($data as $chambre) : ?>
                     <option value="<?= $chambre['id_n'] ?>"><?= $chambre['nom'] ?></option>
                 <?php endforeach ?>
