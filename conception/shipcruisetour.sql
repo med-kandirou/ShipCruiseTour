@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 21 déc. 2022 à 12:23
+-- Généré le : sam. 24 déc. 2022 à 14:57
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 7.4.30
 
@@ -41,9 +41,7 @@ CREATE TABLE `chambre` (
 INSERT INTO `chambre` (`id_ch`, `prix`, `id_t`, `id_navire`) VALUES
 (1, 500, 3, 7),
 (2, 300, 2, 1),
-(5, 200, 2, 7),
-(6, 100, 3, 1),
-(7, 888, 4, 1);
+(11, 333, 3, 7);
 
 -- --------------------------------------------------------
 
@@ -53,6 +51,7 @@ INSERT INTO `chambre` (`id_ch`, `prix`, `id_t`, `id_navire`) VALUES
 
 CREATE TABLE `croisiere` (
   `id_croisiere` int(11) NOT NULL,
+  `nom` varchar(50) NOT NULL,
   `id_navire` int(11) NOT NULL,
   `prix` int(11) DEFAULT NULL,
   `image` varchar(50) DEFAULT NULL,
@@ -60,6 +59,17 @@ CREATE TABLE `croisiere` (
   `port_depart` int(11) DEFAULT NULL,
   `date_depart` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `croisiere`
+--
+
+INSERT INTO `croisiere` (`id_croisiere`, `nom`, `id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES
+(4, 'bahamas', 7, 444, 'exemple2.jpg', 1, 28, '2022-12-22'),
+(5, 'bahamas', 1, 32, 'exemple3.jpg', 3, 28, '2022-12-22'),
+(6, 'hatim', 1, 2, 'cruise.png', 1, 28, '2022-12-23'),
+(12, 'hatim', 1, 222222, 'cruise.png', 1, 29, '2022-12-24'),
+(13, 'hatim', 1, 222222, 'cruise.png', 1, 29, '2022-12-24');
 
 -- --------------------------------------------------------
 
@@ -99,7 +109,10 @@ CREATE TABLE `port` (
 --
 
 INSERT INTO `port` (`id_p`, `nom`, `pays`) VALUES
-(28, 'hatim', 'maroc');
+(28, 'casa', 'maroc'),
+(29, 'bahamas', 'maroc'),
+(30, 'tanger', 'maroc'),
+(31, 'barcelone', 'spain');
 
 -- --------------------------------------------------------
 
@@ -124,9 +137,16 @@ CREATE TABLE `reservation` (
 
 CREATE TABLE `trajet` (
   `id_croisiere` int(11) NOT NULL,
-  `id_port` int(11) NOT NULL,
-  `date_passage` date DEFAULT NULL
+  `id_port` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `trajet`
+--
+
+INSERT INTO `trajet` (`id_croisiere`, `id_port`) VALUES
+(13, 28),
+(13, 30);
 
 -- --------------------------------------------------------
 
@@ -240,13 +260,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  MODIFY `id_ch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_ch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `croisiere`
 --
 ALTER TABLE `croisiere`
-  MODIFY `id_croisiere` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_croisiere` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `navire`
@@ -258,7 +278,7 @@ ALTER TABLE `navire`
 -- AUTO_INCREMENT pour la table `port`
 --
 ALTER TABLE `port`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT pour la table `reservation`

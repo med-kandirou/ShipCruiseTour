@@ -6,7 +6,7 @@ class Croisiere extends database{
     function getlatest(){
         
     }
-
+//select p.nom ,p.pays from port p inner join trajet t on t.id_port=p.id_p and t.id_croisiere=13
     function getcroisiere(){
         $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', `prix`, `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on  c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart";
         $stmt=$this->openConnection()->query($sql);
