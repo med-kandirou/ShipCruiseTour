@@ -13,10 +13,10 @@ class Croisiere extends database{
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
-
-    function addcroisiere($nom,$id_navire,$prix,$image,$nbr_nuit,$port_depart,$date_depart){
+    function addcroisiere($nom,$id_navire,$prix,$image,$nbr_nuit,$port_depart,$date_depart,array $trajet){
         $sql = "INSERT INTO `croisiere`(`nom`,`id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES (:nom,:id_navire,:prix,:image,:nbr_nuit,:port_depart,:date_depart)";
-        $stmt=$this->openConnection()->prepare($sql);
+        $conn=$this->openConnection();
+        $stmt=$conn->prepare($sql);
         $stmt->bindParam(':nom',$nom);
         $stmt->bindParam(':id_navire',$id_navire);
         $stmt->bindParam(':prix',$prix);
@@ -25,6 +25,12 @@ class Croisiere extends database{
         $stmt->bindParam(':port_depart',$port_depart);
         $stmt->bindParam(':date_depart',$date_depart);
         if($stmt->execute()){
+            $sql = "SELECT `id_croisiere` FROM `croisiere` order by id_croisiere DESC LIMIT 1";
+            $stmt=$conn->query($sql);
+            $data=$stmt->fetch(PDO::FETCH_ASSOC);
+            for($i=0;$i<count($trajet);$i++){ 
+                $this->addtrajet($data['id_croisiere'],$trajet[$i]);
+            }
             return true;
         };
     }
@@ -34,9 +40,7 @@ class Croisiere extends database{
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':id_croi',$id_croi);
         $stmt->bindParam(':id_port',$id_port);
-        if($stmt->execute()){
-            return true;
-        };
+        $stmt->execute();
     }
 
 
