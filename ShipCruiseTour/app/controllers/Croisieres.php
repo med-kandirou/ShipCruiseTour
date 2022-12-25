@@ -16,9 +16,18 @@ class Croisieres extends Controller{
                 exit();
             };
         }
-        
     }
 
+    function getcroisiere(){
+        $data=$this->croisiere->getcroisiere();
+        echo json_encode($data);
+    }
+
+    function gettrajet(){
+        $id_croi=$_POST['id_croi'];
+        $data=$this->croisiere->gettrajet($id_croi);
+        echo json_encode($data);
+    }
 
     
 }

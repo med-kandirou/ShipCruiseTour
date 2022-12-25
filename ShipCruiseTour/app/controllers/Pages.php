@@ -46,9 +46,7 @@ class Pages extends Controller{
             $data1=$this->port->getPorts();
             //get navires
             $data2=$this->navire->gatNavires();
-            //get croisieres
-            $data3=$this->croisiere->getcroisiere();
-            $this->view('admin/croisiere',$data1,$data2,$data3);
+            $this->view('admin/croisiere',$data1,$data2);
         }
         else{
             header('location:../pages/');
