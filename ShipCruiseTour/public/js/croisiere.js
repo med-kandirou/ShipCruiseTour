@@ -30,8 +30,7 @@ $(document).ready(function () {
                             document.querySelector('.trajet'+data[i].id_croisiere).innerText+=' '+trajet[j].nom +' - '+trajet[j].pays;
                         }
                     },
-                );
-                
+                );  
             }
         },
     );
