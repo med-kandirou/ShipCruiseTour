@@ -11,7 +11,7 @@ class Croisieres extends Controller{
             $image=$_FILES['image']['name'];
             $trajet=$_POST['check_navire'];
             if($this->croisiere->addcroisiere($nom,$id_navire,$image,$nbr_nuit,$port_depart,$date_depart,$trajet)){
-                $_SESSION['notif']="Croisière a éte ajouté avec success";
+                $_SESSION['notif']="Croisière a éte ajouté avec succès";
                 header('location:../pages/croisiere');
                 exit();
             };
@@ -53,6 +53,15 @@ class Croisieres extends Controller{
             $navire=$_POST['navire'];
             $data=$this->croisiere->filterbynavire($navire);
             echo json_encode($data);
+        }
+    }
+
+     //delete croisiere 
+    function deletecroisiere($id_croi){
+        if($this->croisiere->deletecroisiere($id_croi)){
+            $_SESSION['notif']="Croisière a éte supprimé avec succès";
+            header('location:../pages/croisiere');
+            exit();
         }
     }
 

@@ -9,7 +9,7 @@ class Ports extends Controller{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             extract($_POST);
             if($this->port->addport($nom,$pays)==true){
-                $_SESSION['notif']="Port a éte ajouté avec success";
+                $_SESSION['notif']="Port a éte ajouté avec succès";
                 header('location:../pages/port');
                 exit();
             }
@@ -19,7 +19,7 @@ class Ports extends Controller{
 
     public function deleteport($id_p){
         if($this->port->deleteport($id_p)==true){
-            $_SESSION['notif']="Port a éte supprimé avec success";
+            $_SESSION['notif']="Port a éte supprimé avec succès";
             header('location:'.URLROOT.'/pages/port');
             exit();
         }

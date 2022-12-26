@@ -76,6 +76,15 @@ class Croisiere extends database{
         return $data;
     }
     
+
+    function deletecroisiere($id_croi){
+        $sql ="DELETE FROM `croisiere` WHERE id_croisiere=:id_croi";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_croi',$id_croi);
+        if($stmt->execute()){
+            return true;
+        }
+    }
 }
 
 
