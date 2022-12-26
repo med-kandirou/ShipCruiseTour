@@ -78,7 +78,7 @@ $(document).ready(function () {
                             'success'
                         )      
                         setTimeout(()=>{
-                            location.replace('../Pages/');
+                            location.replace('../Pages/croisiere_client');
                         },2000); 
                     }
                     else{

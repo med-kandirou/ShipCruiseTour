@@ -52,7 +52,7 @@ class Pages extends Controller{
             $this->view('admin/croisiere',$data1,$data2);
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
         }
     }
     public function port(){  
@@ -83,6 +83,34 @@ class Pages extends Controller{
             header('location:../pages/');
         }
     }
+
+    /* client ---------------------------------------- */
+    public function croisiere_client(){  
+        if(isset($_SESSION['id'])){
+            //get ports
+            $data1=$this->port->getPorts();
+            //get navires
+            $data2=$this->navire->gatNavires();
+            $this->view('client/croisiere',$data1,$data2);
+        }
+        else{
+            header('location:../pages/');
+        }
+    }
+    
+    public function reservation_client(){  
+        if(isset($_SESSION['id'])){
+            $this->view('client/reservation');
+        }
+        else{
+            header('location:../pages/');
+        }
+    }
+
+
+
+
+
     public function logout(){  
         session_destroy();
         header('location:../pages/');
