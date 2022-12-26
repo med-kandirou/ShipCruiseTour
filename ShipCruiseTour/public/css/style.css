@@ -142,3 +142,10 @@ li a{
 .title_vg{
     color: #3d89db;
 }
+#btnaddCroisiere{
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+
+}

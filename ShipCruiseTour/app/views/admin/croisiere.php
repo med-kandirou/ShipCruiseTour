@@ -5,7 +5,7 @@
 </div>
 
 
-<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Ajouter Croisière</button>
+
 <div class="container availability-form">
  	<div class="row">
  		<div class="col-lg-12 bg-white shadow p-4 rounded">
@@ -15,8 +15,8 @@
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Port :</label>
  						<select class="form-control">
+             <option>--select--</option>
               <?php foreach ($data1 as $port): ?>
-              <option>--select--</option>
   						<option value="<?= $port['id_p'] ?>"><?= $port['nom'].' - '.$port['pays'] ?></option>
               <?php endforeach; ?>
 						</select>
@@ -28,16 +28,12 @@
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Navire :</label>
  						<select class="form-control" name="port_depart" required>
+             <option>--select--</option>
              <?php foreach ($data2 as $navire): ?>
-              <option>--select--</option>
   						<option value="<?= $navire['id_n'] ?>"><?= $navire['nom'] ?></option>
               <?php endforeach; ?>
             </select>
  					</div>
- 					<div class="col-lg-1 mb-lg-3 mt-2">
- 						<button type="submit" class="btn btn-primary">Submit</button>
- 					</div>
-
  				</div>
  			</form>
  		</div>
@@ -47,10 +43,7 @@
  <div class="container mt-5 mb-5" id="croisieres">
 
 </div>
-
-
-
-
+<button type="button" id="btnaddCroisiere" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="fa fa-plus" style="font-size:40px;color:white"></i></button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -122,4 +115,4 @@
 
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
-<script src="<?php echo URLROOT.'/js/croisiere.js' ?>"></script>
+<script src="<?php echo URLROOT.'/js/croisiere_admin.js' ?>"></script>
