@@ -48,7 +48,16 @@ class Croisiere extends database{
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+    
 
+    function filterbymonth($month){
+        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart where CONCAT(year(c.date_depart),'-',month(c.date_depart))=:month";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':month',$month);
+        $stmt->execute();
+        $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
+    }
 
 }
 

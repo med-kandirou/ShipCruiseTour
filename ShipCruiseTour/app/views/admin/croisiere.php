@@ -23,7 +23,7 @@
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Mois :</label>
- 						<input type="month" class="form-control shadow-none">
+ 						<input type="month" id="month" class="form-control shadow-none">
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Navire :</label>

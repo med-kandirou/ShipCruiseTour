@@ -29,5 +29,12 @@ class Croisieres extends Controller{
         echo json_encode($data);
     }
 
-    
+    //filter by month 
+    function filterbymonth(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $month=$_POST['month'];
+            $data=$this->croisiere->filterbymonth($month);
+            echo json_encode($data);
+        }
+    }
 }
