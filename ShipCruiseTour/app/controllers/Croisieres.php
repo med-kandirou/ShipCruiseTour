@@ -37,4 +37,24 @@ class Croisieres extends Controller{
             echo json_encode($data);
         }
     }
+
+    //filter by port 
+    function filterbyport(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $port=$_POST['port'];
+            $data=$this->croisiere->filterbyport($port);
+            echo json_encode($data);
+        }
+    }
+
+    //filter by navire 
+    function filterbynavire(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $navire=$_POST['navire'];
+            $data=$this->croisiere->filterbynavire($navire);
+            echo json_encode($data);
+        }
+    }
+
+    
 }

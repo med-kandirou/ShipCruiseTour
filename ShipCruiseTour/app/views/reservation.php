@@ -13,9 +13,9 @@
 <div class="container availability-form">
  	<div class="row">
  		<div class="col-lg-12 bg-white shadow p-4 rounded">
- 			<h5 >Filtrer les croisières :</h5>
+		 <h5 class="mb-4">Filtrer les croisières :</h5>
  			<form>
- 				<div class="row align-items-end">
+			 <div class="row d-flex justify-content-around">
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Port :</label>
  						<select class="form-control">
