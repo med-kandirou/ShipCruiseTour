@@ -8,18 +8,17 @@ class Croisiere extends database{
     }
 
     function getcroisiere(){
-        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', `prix`, `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on  c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart";
+        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart";
         $stmt=$this->openConnection()->query($sql);
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
-    function addcroisiere($nom,$id_navire,$prix,$image,$nbr_nuit,$port_depart,$date_depart,array $trajet){
-        $sql = "INSERT INTO `croisiere`(`nom`,`id_navire`, `prix`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES (:nom,:id_navire,:prix,:image,:nbr_nuit,:port_depart,:date_depart)";
+    function addcroisiere($nom,$id_navire,$image,$nbr_nuit,$port_depart,$date_depart,array $trajet){
+        $sql = "INSERT INTO `croisiere`(`nom`,`id_navire`, `image`, `nbr_nuit`, `port_depart`, `date_depart`) VALUES (:nom,:id_navire,:image,:nbr_nuit,:port_depart,:date_depart)";
         $conn=$this->openConnection();
         $stmt=$conn->prepare($sql);
         $stmt->bindParam(':nom',$nom);
         $stmt->bindParam(':id_navire',$id_navire);
-        $stmt->bindParam(':prix',$prix);
         $stmt->bindParam(':image',$image);
         $stmt->bindParam(':nbr_nuit',$nbr_nuit);
         $stmt->bindParam(':port_depart',$port_depart);

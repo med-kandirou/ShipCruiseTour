@@ -61,10 +61,6 @@
             <input type="file" class="form-control" name="image" required>
           </div>
           <div class="mb-3">
-            <label for="pwd" class="form-label">Prix :</label>
-            <input type="number" min="1" required class="form-control" placeholder="Prix" name="prix">
-          </div>
-          <div class="mb-3">
             <label class="form-label">Nombre de nuit :</label>
             <input type="number" min="0" placeholder="Nombre de nuit" class="form-control" name="nbr_nuit" required>
           </div>
