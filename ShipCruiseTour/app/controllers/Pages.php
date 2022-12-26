@@ -26,10 +26,10 @@ class Pages extends Controller{
     }
     public function reservation(){
         //get ports
-        $data1=$this->port->getPorts();
-        //get navires
+        $data=$this->port->getPorts();
+        // //get navires
         $data2=$this->navire->gatNavires();
-        $this->view('reservation',$data1,$data2);
+        $this->view('reservation',$data,$data2);
     }
 
 

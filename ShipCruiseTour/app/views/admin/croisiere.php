@@ -16,7 +16,7 @@
  						<label class="form-label" style="font-weight: 500;">Port :</label>
  						<select class="form-control">
              <option>--select--</option>
-              <?php foreach ($data1 as $port): ?>
+              <?php foreach ($data as $port): ?>
   						<option value="<?= $port['id_p'] ?>"><?= $port['nom'].' - '.$port['pays'] ?></option>
               <?php endforeach; ?>
 						</select>
@@ -78,7 +78,7 @@
                     <option >--Select--</option>
                 <?php foreach($data as $port) : ?>
                     <option value="<?= $port['id_p'] ?>"><?= $port['nom'].' - '.$port['pays'] ?></option>
-                <?php endforeach ?>
+                <?php endforeach ;?>
             </select>
           </div>
           <div class="mb-3">
