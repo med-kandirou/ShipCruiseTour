@@ -114,9 +114,6 @@ class Pages extends Controller{
         }
     }
 
-
-
-
     public function logout(){  
         session_destroy();
         header('location:../pages/');

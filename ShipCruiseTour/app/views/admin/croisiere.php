@@ -64,7 +64,7 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Date de départ :</label>
-            <input type="date" min="0" class="form-control" name="date_depart" required>
+            <input type="date" class="form-control" name="date_depart" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Port de départ :</label>
