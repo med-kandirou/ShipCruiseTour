@@ -1,7 +1,7 @@
 <?php require_once APPROOT.'/views/admin/header_admin.php'; notification(); ?>
 
 <div class="container-fluid">
-    <h1 class="text-center">Croisières</h1>
+    <h1 class="text-center mb-5">Croisières</h1>
 </div>
 
 <div class="container availability-form">
