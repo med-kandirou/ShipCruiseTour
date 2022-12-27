@@ -85,6 +85,13 @@ class Croisiere extends database{
             return true;
         }
     }
+
+    function getTotal(){
+        $sql = "SELECT COUNT(`id_croisiere`) as 'count' FROM `croisiere`";
+        $stmt=$this->openConnection()->query($sql);
+        $res=$stmt->fetch(PDO::FETCH_ASSOC);
+        return $res['count'];
+    }
 }
 
 

@@ -6,6 +6,8 @@ class Pages extends Controller{
         $this->navire=$this->model('Navire');
         $this->chambre=$this->model('Chambre');
         $this->croisiere=$this->model('Croisiere');
+        $this->reservation=$this->model('Reservation');
+        $this->user=$this->model('User');
     }
 
     /*guest  ----------------------------------------*/
@@ -37,7 +39,12 @@ class Pages extends Controller{
 
     public function admin(){  
         if(isset($_SESSION['id'])){
-            $this->view('admin/index');
+            $data=[
+                'totalUser'=>$this->user->getTotal(),
+                'totalCroisiere'=>$this->croisiere->getTotal(),
+                'totalReservation'=>$this->reservation->getTotal()
+            ];
+            $this->view('admin/index',$data);
         }
         else{
             header('location:../pages/');

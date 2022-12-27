@@ -40,6 +40,13 @@ class User extends database{
         }
     }
 
+    function getTotal(){
+        $sql = "SELECT count(`id_u`) as 'count' FROM `user` WHERE role=1";
+        $stmt=$this->openConnection()->query($sql);
+        $res=$stmt->fetch(PDO::FETCH_ASSOC);
+        return $res['count'];
+    }
+
             
     
     
