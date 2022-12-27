@@ -25,7 +25,7 @@
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Navire :</label>
- 						<select class="form-control" name="port_depart" id="idnavire" required>
+ 						<select class="form-control" name="port_depart" id="idnavire" >
              <option>--select--</option>
              <?php foreach ($data2 as $navire): ?>
   						<option value="<?= $navire['id_n'] ?>"><?= $navire['nom'] ?></option>
