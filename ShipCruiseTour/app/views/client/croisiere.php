@@ -43,4 +43,4 @@
   </div>
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
-<script src="<?php echo URLROOT.'/js/croisiere_user.js' ?>"></script>
+<script src="<?php echo URLROOT.'/js/user.js' ?>"></script>

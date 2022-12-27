@@ -109,4 +109,4 @@
 
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
-<script src="<?php echo URLROOT.'/js/croisiere_admin.js' ?>"></script>
+<script src="<?php echo URLROOT.'/js/admin.js' ?>"></script>
