@@ -60,8 +60,9 @@ class Croisieres extends Controller{
     function deletecroisiere($id_croi){
         if($this->croisiere->deletecroisiere($id_croi)){
             $_SESSION['notif']="Croisière a éte supprimé avec succès";
-            header('location:../pages/croisiere');
+            header('location:../../pages/croisiere');
             exit();
+
         }
     }
 
