@@ -18,7 +18,7 @@
 			 <div class="row d-flex justify-content-around">
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Port :</label>
- 						<select class="form-control">
+ 						<select class="form-control" id="port">
 							<option>--select--</option>
 							<?php foreach ($data as $port): ?>
 								<option value="<?= $port['id_p'] ?>"><?= $port['nom'].' - '.$port['pays'] ?></option>
@@ -31,7 +31,7 @@
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Navire :</label>
- 						<select class="form-control" name="port_depart" required>
+ 						<select class="form-control" name="port_depart" id="idnavire">
 						 <option>--select--</option>
 							<?php foreach ($data2 as $navire): ?>
 								<option value="<?= $navire['id_n'] ?>"><?= $navire['nom'] ?></option>
