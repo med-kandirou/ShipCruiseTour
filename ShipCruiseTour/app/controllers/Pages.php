@@ -38,7 +38,7 @@ class Pages extends Controller{
     /* admin ---------------------------------------- */
 
     public function admin(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==2){
             $data=[
                 'totalUser'=>$this->user->getTotal(),
                 'totalCroisiere'=>$this->croisiere->getTotal(),
@@ -51,7 +51,7 @@ class Pages extends Controller{
         }
     }
     public function croisiere(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==2){
             //get ports
             $data1=$this->port->getPorts();
             //get navires
@@ -63,26 +63,26 @@ class Pages extends Controller{
         }
     }
     public function port(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==2){
             $data=$this->port->getPorts();
             $this->view('admin/port',$data);
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
         }
     }
     public function navire(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==2){
             $data=$this->navire->gatNavires();
             $this->view('admin/navire',$data);
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
         }
     }
 
     public function chambre(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==2){
             $data=$this->chambre->getchambre();
             $this->view('admin/chambre',$data);
         }
@@ -93,7 +93,7 @@ class Pages extends Controller{
 
     /* client ---------------------------------------- */
     public function croisiere_client(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==1){
             //get ports
             $data1=$this->port->getPorts();
             //get navires
@@ -101,16 +101,16 @@ class Pages extends Controller{
             $this->view('client/croisiere',$data1,$data2);
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
         }
     }
     
     public function reservation_client(){  
-        if(isset($_SESSION['id'])){
+        if(isset($_SESSION['id']) && $_SESSION['role']==1){
             $this->view('client/reservation');
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
         }
     }
 

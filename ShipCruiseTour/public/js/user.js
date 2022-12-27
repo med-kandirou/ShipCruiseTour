@@ -18,7 +18,7 @@ $(document).ready(function () {
                     <div class="col-md-3 text-center p-3" id="prix_div">
                     <p class="prix">${data[i].prix} <span class="mad">MAD</span></p>
                     <p class="mad">pour une personne</p>
-                    <button type="button" value="${data[i].id_croisiere}" class="btn btn-outline-primary mb-3">Réserver</button>
+                    <a href="../Reservations/reserver/${data[i].id_croisiere}" value="${data[i].id_croisiere}" class="btn btn-outline-primary mb-3">Réserver</a>
                     <p class="depart_dep">${data[i].date_depart}<p>
                     </div>
                 </div>
