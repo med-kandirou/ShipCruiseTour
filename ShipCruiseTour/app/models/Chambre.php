@@ -26,14 +26,25 @@ class Chambre extends database{
         }
     }
     function addchambre($prix,$type,$id_nav){
-        $sql = "INSERT INTO `chambre`(`prix`, `id_t`, `id_navire`) VALUES (:prix,:type,:id_nav)";
+        $sql = "INSERT INTO `chambre`(`prix`, `id_t`, `id_navire`,`reserved`) VALUES (:prix,:type,:id_nav,:reserved)";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':prix',$prix);
         $stmt->bindParam(':type',$type);
         $stmt->bindParam(':id_nav',$id_nav);
+        $reserved=false;
+        $stmt->bindParam(':reserved',$reserved);
         if($stmt->execute()){
             return true;
         };
+    }
+
+    function getchambrebyIdCrois($id_croi){
+        $sql = "SELECT ch.id_ch,ch.prix,t.type from chambre ch inner join type_chambre t on t.id_t=ch.id_t inner JOIN croisiere c on ch.id_navire=c.id_navire and c.id_croisiere=:id_croi";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_croi',$id_croi);
+        $stmt->execute();
+        $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
     }
 
 

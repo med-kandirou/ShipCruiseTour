@@ -18,18 +18,39 @@
                     <?= $escale['nom'].'-'.$escale['pays'].'&nbsp'  ?>
                 <?php endforeach ; ?>
             </p></p>
-        </div>
-        <div class="col-md-3 text-center p-3" id="prix_div">
-            <p class="prix"><?= $data['croisiere']['prix'] ?><span class="mad">MAD</span></p>
-            <p class="mad">pour une personne</p>
-            <p class="depart_dep"><?= $data['croisiere']['date_depart'] ?><p>
+            <span class="depart_dep">Date :</span><span><?= $data['croisiere']['date_depart'] ?></span>
         </div>
     </div>
   </div>
 
   <div class="container">
-    <h4 class="mb-5">Selectionner une chambre :</h4>
+    <h4 class="text-center mb-5">Selectionner une chambre :</h4>
+    <div class="row">
+        <table class="table table-hover text-center">
+            <thead>
+            <tr>
+                <th>Numreo de chambre</th>
+                <th>Prix</th>
+                <th>type</th>
+                <th>Réservation</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php foreach($data['chambre'] as $chambre): ?>
+                    <tr>
+                        <td><?= $chambre['id_ch'] ?></td>
+                        <td><?= $chambre['prix'] ?></td>
+                        <td><?= $chambre['type'] ?></td>
+                        <td><a href="<?= '../Ports/deleteport/'.$chambre['id_p'] ?>">Réserver</a></td>
+                    </tr> 
+                <?php endforeach ; ?>
+            </tbody>
+        </table>
+    </div>
+    
   </div>
+
+
   
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>

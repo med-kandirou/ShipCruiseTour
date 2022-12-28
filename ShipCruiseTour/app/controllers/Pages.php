@@ -47,7 +47,8 @@ class Pages extends Controller{
             $this->view('admin/index',$data);
         }
         else{
-            header('location:../pages/');
+            header('location:../pages/login');
+            exit();
         }
     }
     public function croisiere(){  
@@ -60,6 +61,7 @@ class Pages extends Controller{
         }
         else{
             header('location:../pages/login');
+            exit();
         }
     }
     public function port(){  
@@ -69,6 +71,7 @@ class Pages extends Controller{
         }
         else{
             header('location:../pages/login');
+            exit();
         }
     }
     public function navire(){  
@@ -78,6 +81,7 @@ class Pages extends Controller{
         }
         else{
             header('location:../pages/login');
+            exit();
         }
     }
 
@@ -88,6 +92,7 @@ class Pages extends Controller{
         }
         else{
             header('location:../pages/');
+            exit();
         }
     }
 
