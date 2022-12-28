@@ -41,7 +41,7 @@
                         <td><?= $chambre['id_ch'] ?></td>
                         <td><?= $chambre['prix'] ?></td>
                         <td><?= $chambre['type'] ?></td>
-                        <td><a href="<?= '../../Reservations/reserver/'.$data['croisiere']['id_croisiere'].'/'.$chambre['prix'].'/'.$chambre['id_ch'].'' ?>">Réserver</a></td>
+                        <td><a href="../../reservations/reserver/<?= $data['croisiere']['id_croisiere'].'/'.$chambre['prix'].'/'.$chambre['id_ch'].''?>">Réserver</a></td>
                     </tr> 
                 <?php endforeach ; ?>
             </tbody>
