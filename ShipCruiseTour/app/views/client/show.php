@@ -1,4 +1,4 @@
-<?php require_once APPROOT.'/views/client/header_client.php'; ?>
+<?php require_once APPROOT.'/views/client/header_client.php'; notification();?>
 
 <div class="container-fluid">
     <h1 class="text-center mb-5">Details croisières</h1>
@@ -41,7 +41,7 @@
                         <td><?= $chambre['id_ch'] ?></td>
                         <td><?= $chambre['prix'] ?></td>
                         <td><?= $chambre['type'] ?></td>
-                        <td><a href="<?= '../Ports/deleteport/'.$chambre['id_p'] ?>">Réserver</a></td>
+                        <td><a href="<?= '../../Reservations/reserver/'.$data['croisiere']['id_croisiere'].'/'.$chambre['prix'].'/'.$chambre['id_ch'].'' ?>">Réserver</a></td>
                     </tr> 
                 <?php endforeach ; ?>
             </tbody>

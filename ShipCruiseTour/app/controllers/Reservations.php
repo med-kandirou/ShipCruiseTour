@@ -4,6 +4,7 @@ class Reservations extends Controller{
     function __construct() {
         $this->croisiere=$this->model('Croisiere');
         $this->chambre=$this->model('Chambre');
+        $this->reservation=$this->model('Reservation');
     }
     
     function show($id_croi){
@@ -23,9 +24,12 @@ class Reservations extends Controller{
 
 
 
-    function reserver($id_chambre,$id_croisiere){
-        
-
+    function reserver($id_croisiere,$prix,$chambre){
+        if($this->reservation->reserver($id_croisiere,$prix,$chambre)){
+            $_SESSION['notif']="Reservation a éte passé avec succès";
+            header('location:../Reservations/show');
+            exit();
+        }
     }
     
 
