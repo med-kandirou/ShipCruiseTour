@@ -24,11 +24,12 @@ class Reservations extends Controller{
 
 
 
-    function reserver($id_croisiere,$prix,$chambre){
+    function reserver(){
+        $id_croisiere=$_POST['id_croisiere'];
+        $prix=$_POST['prix'];
+        $chambre=$_POST['chambre'];
         if($this->reservation->reserver($id_croisiere,$prix,$chambre)){
-            $_SESSION['notif']="Reservation a éte passé avec succès";
-            header('location:../Reservations/show');
-            exit();
+            echo 'added';
         }
     }
     

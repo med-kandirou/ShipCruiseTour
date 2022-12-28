@@ -25,8 +25,6 @@ class Reservation extends database{
         return true;
     }
 }
-            
-    
     
 
 

@@ -162,8 +162,4 @@ $(document).ready(function () {
         );
     });
     
-
-    $('#chambre').change(function () { 
-        alert("clicked");
-    });
 })

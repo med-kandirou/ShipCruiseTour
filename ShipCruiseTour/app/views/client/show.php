@@ -41,17 +41,33 @@
                         <td><?= $chambre['id_ch'] ?></td>
                         <td><?= $chambre['prix'] ?></td>
                         <td><?= $chambre['type'] ?></td>
-                        <td><a href="../../reservations/reserver/<?= $data['croisiere']['id_croisiere'].'/'.$chambre['prix'].'/'.$chambre['id_ch'].''?>">Réserver</a></td>
+                        <td><button class="btn btn-primary reserver" value="<?= $data['croisiere']['id_croisiere'].'-'.$chambre['prix'].'-'.$chambre['id_ch'] ?>">Réserver</button></td>
                     </tr> 
                 <?php endforeach ; ?>
             </tbody>
         </table>
     </div>
-    
   </div>
 
 
-  
+  ../../reservations/reserver
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
-<script src="<?php echo URLROOT.'/js/user.js' ?>"></script>
+
+<script>
+    
+    $('.reserver').click(function () { 
+        var info=this.value;
+        info=info.split('-'); 
+        $.post("../../reservations/reserver",{id_croisiere:info[0],prix:info[1],chambre:info[2]},
+            function (response) {
+                Swal.fire(
+                'Success!',
+                'Réservation est passé avec succes !',
+                'success'
+            );
+            },
+        );  
+    });
+
+  </script>
