@@ -51,7 +51,6 @@
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
 <script>
-    
     $('.reserver').click(function () { 
         var info=this.value;
         info=info.split('-'); 
