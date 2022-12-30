@@ -49,11 +49,7 @@
     </div>
   </div>
 
-
-  ../../reservations/reserver
-
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
-
 <script>
     
     $('.reserver').click(function () { 
@@ -69,5 +65,4 @@
             },
         );  
     });
-
   </script>
