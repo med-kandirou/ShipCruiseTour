@@ -34,6 +34,10 @@ class Reservations extends Controller{
     }
     
 
+    function getMyreservation($id_user){
+        
+    }
+
 
     
 }
