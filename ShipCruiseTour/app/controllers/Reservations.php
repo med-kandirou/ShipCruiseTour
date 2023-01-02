@@ -1,6 +1,10 @@
 <?php
 
 class Reservations extends Controller{
+    private $croisiere;
+    private $chambre;
+    private $reservation;
+
     function __construct() {
         $this->croisiere=$this->model('Croisiere');
         $this->chambre=$this->model('Chambre');
@@ -37,7 +41,13 @@ class Reservations extends Controller{
     function getMyreservation(){
         $id_client=$_SESSION['id'];
         $data=$this->reservation->getMyreservation($id_client);
-        echo $data;
+        echo json_encode($data);
+    }
+
+    function deleteReservation(){
+        $id_client=$_SESSION['id'];
+        $data=$this->reservation->getMyreservation($id_client);
+        echo json_encode($data);
     }
 
 

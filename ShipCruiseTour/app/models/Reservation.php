@@ -33,6 +33,17 @@ class Reservation extends database{
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }
+
+    function deleteReservation($id_reservation){
+        $sql = "DELETE FROM `reservation` WHERE id_reserv=:id_reservation";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_reservation',$id_reservation);
+        if($stmt->execute()){
+            return true;
+        }
+        
+    }
+    
 }
     
 
