@@ -18,7 +18,7 @@ $(document).ready(function () {
                     <div class="col-md-3 text-center p-3" id="prix_div">
                     <p class="prix">${data[i].prix} <span class="mad">MAD</span></p>
                     <p class="mad">Type de chambre :${data[i].type}</p>
-                    <a href="../Reservations/delete/${data[i].id_reserv}" value="${data[i].id_reserv}" class="btn btn-outline-danger mb-3">Annuler</a>
+                    <a href="../Reservations/deleteReservation/${data[i].id_reserv}" value="${data[i].id_reserv}" class="btn btn-outline-danger mb-3 delete">Annuler</a>
                     <p class="depart_dep">${data[i].date_depart}<p>
                     </div>
                 </div>

@@ -41,7 +41,6 @@ class Reservation extends database{
         if($stmt->execute()){
             return true;
         }
-        
     }
     
 }

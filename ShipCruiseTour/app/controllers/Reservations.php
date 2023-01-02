@@ -25,9 +25,6 @@ class Reservations extends Controller{
             exit();
         }
     }
-
-
-
     function reserver(){
         $id_croisiere=$_POST['id_croisiere'];
         $prix=$_POST['prix'];
@@ -44,10 +41,13 @@ class Reservations extends Controller{
         echo json_encode($data);
     }
 
-    function deleteReservation(){
-        $id_client=$_SESSION['id'];
-        $data=$this->reservation->getMyreservation($id_client);
-        echo json_encode($data);
+    function deleteReservation($id_croisiere){
+        if($this->reservation->deleteReservation($id_croisiere))
+        {
+            $_SESSION['notif']="Reservation a éte supprimé avec succès";
+            header('location:../../pages/reservation_client');
+            exit();
+        }   
     }
 
 
