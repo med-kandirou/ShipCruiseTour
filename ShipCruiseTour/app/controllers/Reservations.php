@@ -34,8 +34,10 @@ class Reservations extends Controller{
     }
     
 
-    function getMyreservation($id_user){
-        
+    function getMyreservation(){
+        $id_client=$_SESSION['id'];
+        $data=$this->reservation->getMyreservation($id_client);
+        echo $data;
     }
 
 

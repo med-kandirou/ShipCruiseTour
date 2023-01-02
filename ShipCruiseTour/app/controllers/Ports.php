@@ -1,6 +1,7 @@
 <?php
 
 class Ports extends Controller{
+    private $port;
     function __construct() {
         $this->port=$this->model('Port');
     }

@@ -1,6 +1,7 @@
 <?php
 
 class Users extends Controller{
+    private $user;
     function __construct() {
         $this->user=$this->model('User');
     }

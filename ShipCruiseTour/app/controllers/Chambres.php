@@ -1,6 +1,7 @@
 <?php
 
 class Chambres extends Controller{
+    private $chambre;
     function __construct() {
         $this->chambre=$this->model('Chambre');
     }

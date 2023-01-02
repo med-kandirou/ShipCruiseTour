@@ -5,10 +5,9 @@
 </div>
 
 
+<div class="container mt-5 mb-5" id="croisieres">
 
+</div>
 
-
-
-
-
+<script src="<?= URLROOT.'/js/reservation.js' ?>"></script>
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>

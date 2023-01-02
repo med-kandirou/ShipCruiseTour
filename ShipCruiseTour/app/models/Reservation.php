@@ -25,10 +25,11 @@ class Reservation extends database{
         return true;
     }
 
-//mazal makmlat
-    function getMyreservation($id_user){
-        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart";
-        $stmt=$this->openConnection()->query($sql);
+    function getMyreservation($id_client){
+        $sql = "SELECT c.id_croisiere, r.id_reserv, c.nom as 'nom_crois', n.nom as 'nom_nav', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart`,t.type ,ch.prix FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart inner join reservation r on r.id_croisiere=c.id_croisiere inner join chambre ch on ch.id_ch=r.id_chambre inner join type_chambre t on t.id_t=ch.id_t and r.id_client=:id_client";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_client',$id_client);
+        $stmt->execute();
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $data;
     }

@@ -1,6 +1,12 @@
 <?php
 
 class Pages extends Controller{
+    private $port;
+    private $navire;
+    private $chambre;
+    private $croisiere;
+    private $reservation;
+    private $user;
     function __construct() {
         $this->port=$this->model('Port');
         $this->navire=$this->model('Navire');
