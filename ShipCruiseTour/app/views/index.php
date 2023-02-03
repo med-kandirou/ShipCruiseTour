@@ -21,7 +21,7 @@
     </div>
 </div><br><br>
 
-<div class="container">
+<div class="container" >
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -76,13 +76,13 @@
         <h2 class="center">Partenariat</h2>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="d-block mx-auto col-md-3">
             <img width="100%" src="<?= URLROOT.'/img/part1.png'?>">
         </div>
-        <div class="col-md-3">
+        <div class="d-block mx-auto col-md-3">
             <img width="100%" src="<?= URLROOT.'/img/part2.png'?>">
         </div>
-        <div class="col-md-3">
+        <div class="d-block mx-auto col-md-3">
             <img width="100%" src="<?= URLROOT.'/img/part3.png'?>">
         </div>
     </div>
