@@ -7,7 +7,6 @@
         <h1 id="title_about">About Us</h1>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6"><br><br><br>

@@ -48,5 +48,6 @@
 
 </div>
 
+
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
 <script src="<?php echo URLROOT.'/js/user.js' ?>"></script>

@@ -19,6 +19,12 @@ class Croisieres extends Controller{
         }
     }
 
+    function pagination(){
+        $data=$this->croisiere->pagination();
+        echo json_encode($data);
+    }
+
+
     function getcroisiere(){
         $data=$this->croisiere->getcroisiere();
         echo json_encode($data);
