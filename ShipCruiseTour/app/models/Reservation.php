@@ -35,12 +35,27 @@ class Reservation extends database{
     }
 
     function deleteReservation($id_reservation){
-        $sql = "DELETE FROM `reservation` WHERE id_reserv=:id_reservation";
-        $stmt=$this->openConnection()->prepare($sql);
-        $stmt->bindParam(':id_reservation',$id_reservation);
-        if($stmt->execute()){
+
+        $sql = "SELECT date_depart FROM croisiere c inner join reservation r on c.id_croisiere=r.id_croisiere and id_reserv=".$id_reservation."";
+        $stmt=$this->openConnection()->query($sql);
+        $res=$stmt->fetch(PDO::FETCH_ASSOC);
+        $date_depart=$res['date_depart'];
+
+        $sql = "SELECT DATEDIFF('".$date_depart."',CURRENT_DATE) as diff";
+        $stmt=$this->openConnection()->query($sql);
+        $res=$stmt->fetch(PDO::FETCH_ASSOC);
+        $diff=$res['diff'];
+
+        if($diff>2){
+            $sql = "DELETE FROM `reservation` WHERE id_reserv=:id_reservation";
+            $stmt=$this->openConnection()->prepare($sql);
+            $stmt->bindParam(':id_reservation',$id_reservation);
+            $stmt->execute();
             return true;
         }
+        else{
+            return false;
+        }   
     }
     
 }

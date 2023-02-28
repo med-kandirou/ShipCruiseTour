@@ -48,6 +48,11 @@ class Reservations extends Controller{
             header('location:../../pages/reservation_client');
             exit();
         }   
+        else{
+            $_SESSION['notif']="la date est depassé d'annuler la reservation";
+            header('location:../../pages/reservation_client');
+            exit();
+        }
     }
 
 
