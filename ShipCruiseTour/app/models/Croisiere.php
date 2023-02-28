@@ -48,7 +48,7 @@ class Croisiere extends database{
     
 
     function filterbymonth($month){
-        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart where CONCAT(year(c.date_depart),'-',month(c.date_depart))=:month";
+        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart where CONCAT(year(c.date_depart),'-',month(c.date_depart))=:month and c.date_depart>CURRENT_DATE";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':month',$month);
         $stmt->execute();
@@ -57,7 +57,7 @@ class Croisiere extends database{
     }
 
     function filterbyport($port){
-        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart and c.port_depart=:port";
+        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart and c.port_depart=:port and c.date_depart>CURRENT_DATE";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':port',$port);
         $stmt->execute();
@@ -65,7 +65,7 @@ class Croisiere extends database{
         return $data;
     }
     function filterbynavire($navire){
-        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart and c.id_navire=:navire";
+        $sql = "SELECT `id_croisiere`, c.nom as 'nom_crois', n.nom as 'nom_nav', (select min(prix) from chambre WHERE id_navire = n.id_n) as 'prix', `image`, `nbr_nuit`, p.nom as 'port_dep', p.pays , `date_depart` FROM `croisiere` c inner JOIN navire n on c.id_navire=n.id_n inner join port p on p.id_p=c.port_depart and c.id_navire=:navire and c.date_depart>CURRENT_DATE";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':navire',$navire);
         $stmt->execute();
