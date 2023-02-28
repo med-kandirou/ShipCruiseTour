@@ -13,7 +13,7 @@
  				<div class="row d-flex justify-content-around">
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Port :</label>
-					<select class="form-control" name="port_depart" required>
+					<select class="form-control" id="port">
 							<option >--Select--</option>
 						<?php foreach($data as $port) : ?>
 							<option value="<?= $port['id_p'] ?>"><?= $port['nom'].' - '.$port['pays'] ?></option>
@@ -22,7 +22,7 @@
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Mois :</label>
- 						<input type="month" class="form-control shadow-none">
+ 						<input type="month" id="month" class="form-control shadow-none">
  					</div>
  					<div class="col-lg-3 mb-3">
  						<label class="form-label" style="font-weight: 500;">Navire :</label>
@@ -40,6 +40,7 @@
  </div>
 
   <div class="container mt-5 mb-5" id="croisieres">
+
   </div>
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
