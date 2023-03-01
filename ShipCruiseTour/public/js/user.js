@@ -37,8 +37,12 @@ $(document).ready(function () {
 
     //filtrer croisiere par mois
     $('#month').change(function(){
-        var month=this.value;
-        $.post("../Croisieres/filterbymonth",{month:month},
+        let splited=this.value.split('-')
+        if(splited[1]<10){
+            let splitedDay=splited[1].split('');
+            splited[1]=splitedDay[1]
+        }
+        $.post("../Croisieres/filterbymonth",{month:splited[0]+'-'+splited[1]},
         function (response) {
             var data=JSON.parse(response);
             document.getElementById('croisieres').innerHTML="";
