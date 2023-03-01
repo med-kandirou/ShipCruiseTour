@@ -39,7 +39,7 @@ class Chambre extends database{
     }
 
     function getchambrebyIdCrois($id_croi){
-        $sql = "SELECT ch.id_ch,ch.prix,t.type from chambre ch inner join type_chambre t on t.id_t=ch.id_t inner JOIN croisiere c on ch.id_navire=c.id_navire and c.id_croisiere=:id_croi";
+        $sql = "SELECT ch.id_ch,ch.prix,t.type from chambre ch inner join type_chambre t on t.id_t=ch.id_t inner JOIN croisiere c on ch.id_navire=c.id_navire and c.id_croisiere=:id_croi where ch.id_ch not in (SELECT id_chambre from reservation where id_croisiere=:id_croi)";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':id_croi',$id_croi);
         $stmt->execute();
