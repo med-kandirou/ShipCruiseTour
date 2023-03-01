@@ -56,7 +56,7 @@
 					<div class="col-md-3 text-center p-3" id="prix_div">
 						<p class="prix"><?= $croisiere['prix'] ?><span class="mad">MAD</span></p>
 						<p class="mad">pour une personne</p>
-						<a href="../Reservations/show/"<?= $croisiere['id_croisiere'] ?>"" value="<?= $croisiere['id_croisiere'] ?>" class="btn btn-outline-primary mb-3">Réserver</a>
+						<a href="../Reservations/show/<?= $croisiere['id_croisiere'] ?>" value="<?= $croisiere['id_croisiere'] ?>" class="btn btn-outline-primary mb-3">Réserver</a>
 						<p class="depart_dep"><?= $croisiere['date_depart'] ?><p>
 					</div>
 				</div>
