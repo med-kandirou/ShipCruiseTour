@@ -61,6 +61,9 @@
                 'Réservation est passé avec succes !',
                 'success'
             );
+            setTimeout(()=>{
+                location.href=location.href;
+            },1000)
             },
         );  
     });
