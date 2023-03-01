@@ -96,17 +96,19 @@
 	}
 	</style>
   <nav class="pagination-container">
-  <center><button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+  <center>
+	<button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
       &lt;
     </button>
 
-    <div id="pagination-numbers">
+    <span id="pagination-numbers">
 
-    </div>
+    </span>
 
     <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
       &gt;
-    </button></center>
+    </button>
+</center>
   </nav>
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
