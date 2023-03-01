@@ -41,24 +41,26 @@
 
   <div class="container mt-5 mb-5" id="croisieres">
 
-	<div class="row croisiere mb-5">
+  	<?php foreach ($data3 as $croisiere): ?>
+		<div class="row croisiere mb-5">
 			<div class="col-md-4">
 				<img src="../img/${data[i].image}" width="100%" height="100%"">
 			</div>
 			<div class="col-md-5 p-3">
-				<p class="nuit">${data[i].nbr_nuit} Nuits</p>
-				<h4 class="title_vg">${data[i].nom_crois}</h4>
-				<p><img width="30px" height="30px" src="../img/cruise.png" alt="cruise"> ${data[i].nom_nav}</p>
-				<p><span class="depart_dep">Port de départ :</span> ${data[i].port_dep} - ${data[i].pays} </p>
-				<p><span class="depart_dep">L'escale à :</span><p class='trajet${data[i].id_croisiere}'></p></p>
+				<p class="nuit"><?= $croisiere['nbr_nuit'] ?> Nuits</p>
+				<h4 class="title_vg"><?= $croisiere['nom_crois'] ?></h4>
+				<p><img width="30px" height="30px" src="../img/cruise.png" alt="cruise"> <?= $croisiere['nom_nav'] ?></p>
+				<p><span class="depart_dep">Port de départ :</span><?= $croisiere['port_dep'] ?>  - <?= $croisiere['pays'] ?> </p>
 			</div>
 			<div class="col-md-3 text-center p-3" id="prix_div">
-				<p class="prix">${data[i].prix} <span class="mad">MAD</span></p>
+				<p class="prix"><?= $croisiere['prix'] ?><span class="mad">MAD</span></p>
 				<p class="mad">pour une personne</p>
-				<a href="../Reservations/show/${data[i].id_croisiere}" value="${data[i].id_croisiere}" class="btn btn-outline-primary mb-3">Réserver</a>
-				<p class="depart_dep">${data[i].date_depart}<p>
+				<a href="../Reservations/show/"<?= $croisiere['id_croisiere'] ?>"" value="<?= $croisiere['id_croisiere'] ?>" class="btn btn-outline-primary mb-3">Réserver</a>
+				<p class="depart_dep"><?= $croisiere['date_depart'] ?><p>
 			</div>
 		</div>
+	<?php endforeach; ?>
+
 
   </div>
 

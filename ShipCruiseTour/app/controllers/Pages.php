@@ -109,7 +109,11 @@ class Pages extends Controller{
             $data1=$this->port->getPorts();
             //get navires
             $data2=$this->navire->gatNavires();
-            $this->view('client/croisiere',$data1,$data2);
+
+            //get navires
+            $data3=$this->croisiere->getcroisiere();
+
+            $this->view('client/croisiere',$data1,$data2,$data3);
         }
         else{
             header('location:../pages/login');
