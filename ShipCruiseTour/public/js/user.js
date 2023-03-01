@@ -1,11 +1,4 @@
 $(document).ready(function () {
-
-    
-    
-
-    
-
-
     //filtrer croisiere par mois
     $('#month').change(function(){
         let splited=this.value.split('-')
