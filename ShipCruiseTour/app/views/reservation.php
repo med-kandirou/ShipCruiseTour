@@ -44,18 +44,12 @@
  	</div>
  </div>
 
- <div class="container mt-5 mb-5" id="croisieres">
+<div class="container mt-5 mb-5" id="croisieres">
+	
 
 </div>
 
 
-<center>
-	<div id="pagination-numbers">
-
-    </div>
-</center>
-
-    
 
 <?php require_once APPROOT.'/views/inc/footer.php'; ?>
 <script src="<?php echo URLROOT.'/js/user.js' ?>"></script>
